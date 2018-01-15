@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Curiosity</string>
+    <string name="welcomeText">The X-Cats 2018 Scouting App</string>
+
+    <string name="loginButtonText">Log-In</string>
+    <string name="passwordInputText">Password</string>
+    <string name="usernameInputText">Username</string>
+
+    <string name="scoutButtonText">Scout Match</string>
+    <string name="dataButtonText">View Data</string>
+    <string name="logoutButtonText">Log Out</string>
 </resources>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="testEventList">
+        <item>Select an Event...</item>
         <item>Finger Lakes Regional - Rochester, NY</item>
         <item>FIRST Championships - Detroit, MI</item>
-        <item>Indiano Robotics Invitational - Indiana</item>
+        <item>Indiana Robotics Invitational - Indiana, USA</item>
     </string-array>
 
 </resources>
