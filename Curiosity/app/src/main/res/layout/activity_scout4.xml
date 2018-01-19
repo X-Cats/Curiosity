@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endgame Team"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team_num"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Climb Solo"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="58dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Climb Assisted"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Climb Attempt"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="147dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Climbing"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assist 1 robot"
+        tools:layout_editor_absoluteX="216dp"
+        tools:layout_editor_absoluteY="58dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assist 2 Robots"
+        tools:layout_editor_absoluteX="216dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attempt Assisted"
+        tools:layout_editor_absoluteX="216dp"
+        tools:layout_editor_absoluteY="147dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Assist"
+        tools:layout_editor_absoluteX="216dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Climb & Assist 1 "
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="239dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Climb & Assist 2"
+        tools:layout_editor_absoluteX="211dp"
+        tools:layout_editor_absoluteY="239dp" />
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="446dp" />
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        tools:layout_editor_absoluteX="279dp"
+        tools:layout_editor_absoluteY="446dp" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="304dp"
+        android:layout_height="46dp"
+        android:text="     If a robot assists others or was assisted, please explain in detail here:"
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="296dp" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="297dp"
+        android:layout_height="59dp"
+        android:text="Insert Text Here"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="351dp" />
+</android.support.constraint.ConstraintLayout>
