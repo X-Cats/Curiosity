@@ -22,9 +22,11 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="224dp"
-        android:layout_height="24dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="20dp"
+        android:entries="@array/testTeamList"
+        android:textAlignment="textEnd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,11 +46,12 @@
     <EditText
         android:id="@+id/editText2"
         android:layout_width="208dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="20dp"
         android:ems="10"
+        android:hint="Enter Match Number:"
         android:inputType="number"
+        android:textAlignment="textEnd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
@@ -182,7 +185,7 @@
         android:id="@+id/toggleButton"
         android:layout_width="79dp"
         android:layout_height="40dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="28dp"
         android:text="ToggleButton"
         android:textOff="Left"
@@ -206,7 +209,7 @@
         android:id="@+id/toggleButton2"
         android:layout_width="79dp"
         android:layout_height="42dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginTop="28dp"
         android:text="ToggleButton"
         android:textOff="Left"
@@ -246,9 +249,9 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="52dp"
-        android:text="Red Side Switch"
+        android:text="Red Switch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -269,9 +272,9 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginTop="52dp"
-        android:text="Blue Side Switch"
+        android:text="Blue Switch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
