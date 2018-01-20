@@ -6,18 +6,19 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonScoutMatch"
         android:layout_width="215dp"
         android:layout_height="125dp"
         android:layout_marginTop="30dp"
         android:text="@string/scoutButtonText"
+        android:onClick="scoutMatchClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonViewData"
         android:layout_width="215dp"
         android:layout_height="125dp"
         android:layout_marginTop="40dp"
@@ -25,10 +26,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonScoutMatch" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonLogout"
         android:layout_width="215dp"
         android:layout_height="125dp"
         android:layout_marginTop="40dp"
@@ -36,5 +37,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonViewData" />
 </android.support.constraint.ConstraintLayout>

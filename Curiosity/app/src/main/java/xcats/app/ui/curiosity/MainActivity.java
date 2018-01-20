@@ -20,9 +20,11 @@ public class MainActivity extends AppCompatActivity
 
     public void loginClick(View view){
         Intent intent = new Intent(this, EventLandingActivity.class);
+
         Spinner eventSpinner= (Spinner) findViewById(R.id.spinnerEvent);
         String[] eventList = getResources().getStringArray(R.array.testEventList);
         String eventSelected = eventList[eventSpinner.getSelectedItemPosition()];
+
         intent.putExtra(EXTRA_MESSAGE, eventSelected);
         startActivity(intent);
     }

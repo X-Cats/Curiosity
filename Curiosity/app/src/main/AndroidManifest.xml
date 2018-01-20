@@ -19,6 +19,12 @@
         <activity android:name=".EventLandingActivity"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".ScoutMatch.ScoutMatch1"
+            android:parentActivityName=".EventLandingActivity">
+        </activity>
+        <activity android:name=".ScoutMatch.ScoutMatch2"
+            android:parentActivityName=".ScoutMatch.ScoutMatch1">
+        </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
