@@ -199,6 +199,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="40dp"
         android:text="Next"
+        android:onClick="scoutMatch3Click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

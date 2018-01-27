@@ -25,7 +25,21 @@
         <activity android:name=".ScoutMatch.ScoutMatch2"
             android:parentActivityName=".ScoutMatch.ScoutMatch1">
         </activity>
-        <activity android:name=".ScoutMatch.ScoutMatch3" />
+        <activity android:name=".ScoutMatch.ScoutMatch3"
+            android:parentActivityName=".ScoutMatch.ScoutMatch2">
+        </activity>
+        <activity android:name=".ScoutMatch.ScoutMatch4"
+            android:parentActivityName=".ScoutMatch.ScoutMatch3">
+        </activity>
+        <activity android:name=".ScoutMatch.ScoutMatch5"
+            android:parentActivityName=".ScoutMatch.ScoutMatch4">
+        </activity>
+        <activity android:name=".Analyze1"
+            android:parentActivityName=".EventLandingActivity">
+        </activity>
+        <activity android:name=".Analyze2"
+            android:parentActivityName=".Analyze1">
+        </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

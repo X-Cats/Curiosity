@@ -23,6 +23,7 @@
         android:layout_height="125dp"
         android:layout_marginTop="40dp"
         android:text="@string/dataButtonText"
+        android:onClick="analyzeMatchClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
