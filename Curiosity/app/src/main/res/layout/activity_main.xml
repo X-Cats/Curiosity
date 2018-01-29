@@ -40,6 +40,7 @@
         android:ems="10"
         android:hint="@string/passwordInputText"
         android:inputType="textPassword"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/editTextUser" />

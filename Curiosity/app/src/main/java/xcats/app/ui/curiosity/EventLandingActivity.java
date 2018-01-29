@@ -21,8 +21,12 @@ public class EventLandingActivity extends AppCompatActivity
 
         Intent i = getIntent();
         String s = i.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        Log.d("Curiosity", s);
-        getSupportActionBar().setTitle(s);
+
+        if(s != null){
+            Log.d("Curiosity", s);
+            getSupportActionBar().setTitle(s);
+
+        }
     }
 
     public void scoutMatchClick(View view){

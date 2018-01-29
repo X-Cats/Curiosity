@@ -213,7 +213,7 @@
         android:layout_marginTop="28dp"
         android:text="ToggleButton"
         android:textOff="Left"
-        android:textOn="Blue"
+        android:textOn="Right"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -296,6 +296,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
         android:text="Back"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -40,6 +40,12 @@
         <activity android:name=".Analyze2"
             android:parentActivityName=".Analyze1">
         </activity>
+        <activity android:name=".Analyze3"
+            android:parentActivityName=".Analyze2">
+        </activity>
+        <activity android:name=".Analyze4"
+            android:parentActivityName=".Analyze2">
+        </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

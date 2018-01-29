@@ -23,4 +23,9 @@ public class Analyze1 extends AppCompatActivity
         startActivity(intent);
 
     }
+    public void analyzeh1Click(View view){
+        Intent intent = new Intent(this, EventLandingActivity.class);
+        startActivity(intent);
+
+    }
 }
