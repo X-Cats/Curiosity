@@ -1,10 +1,14 @@
 package xcats.app.ui.curiosity.ScoutMatch;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Spinner;
+
+
 
 import xcats.app.ui.curiosity.R;
 
@@ -32,4 +36,18 @@ public class ScoutMatch1 extends AppCompatActivity{
         intent.putExtra(EXTRA_MESSAGE, eventSelected);
         startActivity(intent);
     }
+
+    /*Button.setOnClickListener(new OnClickListener() {
+
+    }
+    boolean check = false;
+
+    public void scoutMatchColor1(View view){
+        check = true;
+        Button.setBackgroundColor(Color.BLUE);
+
+    }*/
+
+
+
 }
