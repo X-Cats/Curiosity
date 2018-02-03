@@ -187,7 +187,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="56dp"
         android:layout_marginTop="312dp"
-        android:text="ToggleButton"
+        android:background="@drawable/my_btn_toggle"
         android:textOff="Red"
         android:textOn="Blue"
         app:layout_constraintEnd_toEndOf="parent"

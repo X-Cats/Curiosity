@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
-
+import android.widget.ToggleButton;
 
 
 import xcats.app.ui.curiosity.R;
@@ -33,16 +33,19 @@ public class ScoutMatch1 extends AppCompatActivity{
     public void scoutMatch1Click(View view){
         Intent intent = new Intent(this, ScoutMatch2.class);
 
-        Spinner eventSpinner= (Spinner) findViewById(R.id.spinner);
-        String[] eventList = getResources().getStringArray(R.array.testTeamList);
-        String eventSelected = eventList[eventSpinner.getSelectedItemPosition()];
+        Spinner teamNumSpinner= (Spinner) findViewById(R.id.spinner);
+        String[] teamNumList = getResources().getStringArray(R.array.testTeamList);
+        String teamNum = teamNumList[teamNumSpinner.getSelectedItemPosition()];
 
-        intent.putExtra(EXTRA_MESSAGE, eventSelected);
+        ToggleButton findColor = findViewById(R.id.toggleButton3);
+        String allianceColor = String.valueOf(findColor.getText());
+        intent.putExtra("color", allianceColor);
+
+        intent.putExtra(EXTRA_MESSAGE, teamNum);
         startActivity(intent);
     }
 
-    public void colorChange (View view)
-    {
+    public void colorChange (View view) {
         int id = view.getId();
         String clickedButtonName = view.getResources().getResourceName(id);
         Log.d("ScoutMatch1", "The current button name is" + clickedButtonName);
@@ -61,11 +64,6 @@ public class ScoutMatch1 extends AppCompatActivity{
         else if (clickedButtonName.equals("xcats.app.ui.curiosity:id/buttonBlueSwitchBottom"))
             pairButton = (Button) findViewById(R.id.buttonBlueSwitchTop);
 
-        /*@+id/buttonRedSwitchTop pairs with @+id/buttonRedSwitchBottom
-        @+id/buttonScaleTop pairs with @+id/buttonScaleBottom
-        @+id/buttonBlueSwitchTop pairs with @+id/buttonBlueSwitchBottom*/
-
-
         int color = Color.TRANSPARENT;
         Drawable background = view.getBackground();
         if (background instanceof ColorDrawable)
@@ -83,7 +81,5 @@ public class ScoutMatch1 extends AppCompatActivity{
 
 
     }
-
-
 
 }
