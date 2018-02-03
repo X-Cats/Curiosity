@@ -26,6 +26,7 @@ public class ScoutMatch3 extends AppCompatActivity
 
         Intent i = getIntent();
         String teamNum = i.getStringExtra(ScoutMatch1.EXTRA_MESSAGE);
+
         Log.d("Curiosity", ""+ teamNum);
 
         TextView teamNumView = findViewById(R.id.textView14);
