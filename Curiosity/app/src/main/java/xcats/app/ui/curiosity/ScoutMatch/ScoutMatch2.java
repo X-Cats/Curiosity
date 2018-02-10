@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import xcats.app.ui.curiosity.R;
 
@@ -21,6 +22,8 @@ public class ScoutMatch2 extends AppCompatActivity{
 
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
+    String color;
+
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,7 @@ public class ScoutMatch2 extends AppCompatActivity{
 
         Intent i = getIntent();
         String teamNum = i.getStringExtra(ScoutMatch1.EXTRA_MESSAGE);
-        String color = i.getStringExtra("color");
+        color = i.getStringExtra("color");
         Log.d("Curiosity", ""+ teamNum);
 
         TextView teamNumView = findViewById(R.id.textView10);
@@ -73,6 +76,9 @@ public class ScoutMatch2 extends AppCompatActivity{
         Intent intent = new Intent(this, ScoutMatch3.class);
         TextView teamNumView = findViewById(R.id.textView10);
         String teamNum = String.valueOf(teamNumView.getText());
+
+
+        intent.putExtra("color", color);
 
         intent.putExtra(EXTRA_MESSAGE, teamNum);
         startActivity(intent);

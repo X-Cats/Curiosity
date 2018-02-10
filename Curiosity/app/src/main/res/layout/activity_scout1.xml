@@ -87,6 +87,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:defaultFocusHighlightEnabled="false"
             android:text="LEFT"
             app:layout_constraintEnd_toStartOf="@+id/radioButton5"
             app:layout_constraintStart_toStartOf="parent"

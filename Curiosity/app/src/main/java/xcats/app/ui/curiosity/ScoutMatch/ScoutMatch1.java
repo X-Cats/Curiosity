@@ -1,6 +1,7 @@
 package xcats.app.ui.curiosity.ScoutMatch;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
 
@@ -28,6 +30,20 @@ public class ScoutMatch1 extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scout1);
+
+        RadioButton radioButton =  findViewById(R.id.radioButton);
+        RadioButton radioButton2 =  findViewById(R.id.radioButton2);
+        RadioButton radioButton3 =  findViewById(R.id.radioButton3);
+        RadioButton radioButton4 =  findViewById(R.id.radioButton4);
+        RadioButton radioButton5 =  findViewById(R.id.radioButton5);
+        RadioButton radioButton6 =  findViewById(R.id.radioButton6);
+
+        radioButton.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+        radioButton2.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+        radioButton3.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+        radioButton4.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+        radioButton5.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+        radioButton6.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
     }
 
     public void scoutMatch1Click(View view){

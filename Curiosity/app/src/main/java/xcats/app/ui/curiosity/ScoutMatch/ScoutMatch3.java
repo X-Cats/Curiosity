@@ -1,12 +1,15 @@
 package xcats.app.ui.curiosity.ScoutMatch;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.util.Log;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import xcats.app.ui.curiosity.R;
 
@@ -18,6 +21,8 @@ public class ScoutMatch3 extends AppCompatActivity
 {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
+    String color;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -25,12 +30,26 @@ public class ScoutMatch3 extends AppCompatActivity
         setContentView(R.layout.activity_scout3);
 
         Intent i = getIntent();
+        color = i.getStringExtra("color");
         String teamNum = i.getStringExtra(ScoutMatch1.EXTRA_MESSAGE);
 
-        Log.d("Curiosity", ""+ teamNum);
+        Log.d("Curiosity", ""+ teamNum + color);
 
         TextView teamNumView = findViewById(R.id.textView14);
         teamNumView.setText(teamNum);
+
+        RadioButton radioButton18= findViewById(R.id.radioButton18);
+
+        if (color.equals("Red"))
+        {
+            radioButton18.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+        }
+
+        else
+        {
+            radioButton18.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+        }
+
     }
 
         public void scoutMatch3Click(View view){
@@ -38,6 +57,8 @@ public class ScoutMatch3 extends AppCompatActivity
 
         TextView teamNumView = findViewById(R.id.textView14);
         String teamNum = String.valueOf(teamNumView.getText());
+
+        intent.putExtra("color", color);
 
         intent.putExtra(EXTRA_MESSAGE, teamNum);
 

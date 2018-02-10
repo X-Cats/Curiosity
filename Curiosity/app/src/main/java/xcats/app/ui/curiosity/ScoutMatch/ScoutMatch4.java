@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import xcats.app.ui.curiosity.R;
 
@@ -19,6 +20,8 @@ public class ScoutMatch4 extends AppCompatActivity
 {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
+    String color;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -27,42 +30,53 @@ public class ScoutMatch4 extends AppCompatActivity
 
         Intent i = getIntent();
         String teamNum = i.getStringExtra(ScoutMatch1.EXTRA_MESSAGE);
-        String color = i.getStringExtra("color");
+        color = i.getStringExtra("color");
         Log.d("Curiosity", ""+ teamNum);
 
         TextView teamNumView = findViewById(R.id.textView27);
         teamNumView.setText(teamNum);
 
-        RadioButton radioButton7= findViewById(R.id.radioButton7);
-        RadioButton radioButton8= findViewById(R.id.radioButton8);
-        RadioButton radioButton9= findViewById(R.id.radioButton9);
-        RadioButton radioButton10= findViewById(R.id.radioButton10);
-        RadioButton radioButton11= findViewById(R.id.radioButton11);
-        RadioButton radioButton12= findViewById(R.id.radioButton12);
-        RadioButton radioButton13 =  findViewById(R.id.radioButton13);
-        RadioButton radioButton14 =  findViewById(R.id.radioButton14);
+        RadioButton radioButton15= findViewById(R.id.radioButton15);
+        RadioButton radioButton16= findViewById(R.id.radioButton16);
+        RadioButton radioButton17= findViewById(R.id.radioButton17);
+        //RadioButton radioButton18= findViewById(R.id.radioButton18);
+        RadioButton radioButton19= findViewById(R.id.radioButton19);
+        RadioButton radioButton20 =  findViewById(R.id.radioButton20);
+        RadioButton radioButton21 =  findViewById(R.id.radioButton21);
+        RadioButton radioButton22 =  findViewById(R.id.radioButton22);
+        RadioButton radioButton23 =  findViewById(R.id.radioButton23);
+        RadioButton radioButton24 =  findViewById(R.id.radioButton24);
+        RadioButton radioButton25 =  findViewById(R.id.radioButton25);
+
 
         if (color.equals("Red")){
-            radioButton7.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton8.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton9.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton10.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton11.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton12.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton13.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton14.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            radioButton15.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            radioButton16.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            radioButton17.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            //radioButton18.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            radioButton19.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            radioButton20.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            radioButton21.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            radioButton22.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            radioButton23.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            radioButton24.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            radioButton25.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
 
         }
         else
         {
-            radioButton7.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton8.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton9.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton10.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton11.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton12.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton13.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton14.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            radioButton15.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            radioButton16.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            radioButton17.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            //radioButton18.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            radioButton19.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            radioButton20.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            radioButton21.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            radioButton22.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            radioButton23.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            radioButton24.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            radioButton25.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+
         }
     }
 
@@ -71,6 +85,9 @@ public class ScoutMatch4 extends AppCompatActivity
 
         TextView teamNumView = findViewById(R.id.textView27);
         String teamNum = String.valueOf(teamNumView.getText());
+
+
+        intent.putExtra("color", color);
 
         intent.putExtra(EXTRA_MESSAGE, teamNum);
 
