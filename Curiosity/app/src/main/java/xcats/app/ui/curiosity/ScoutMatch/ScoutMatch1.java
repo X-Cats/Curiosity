@@ -16,6 +16,8 @@ import android.widget.Spinner;
 import android.widget.ToggleButton;
 
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import xcats.app.ui.curiosity.R;
 
 /**
@@ -44,6 +46,14 @@ public class ScoutMatch1 extends AppCompatActivity{
         radioButton4.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
         radioButton5.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
         radioButton6.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+
+        blueAllianceTeamRetrieval();
+    }
+
+    private void blueAllianceTeamRetrieval() {
+
+        // TODO: Add code for getting a list of teams and setting them to spinner
+
     }
 
     public void scoutMatch1Click(View view){
