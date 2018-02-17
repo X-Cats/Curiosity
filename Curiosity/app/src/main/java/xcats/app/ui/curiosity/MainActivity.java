@@ -88,6 +88,50 @@ public class MainActivity extends AppCompatActivity
         eventSpinner.setAdapter(eventAdapter);
     }
 
+    public void loginClick(View view){
+        Intent intent = new Intent(this, EventLandingActivity.class);
+
+        String userName = userNameValidation();
+
+        if (userName == null)
+            return;
+
+        String eventSelected = eventValidation();
+
+        if( eventSelected == null)
+            return;
+
+        intent.putExtra(EXTRA_MESSAGE, eventSelected);
+        startActivity(intent);
+    }
+
+    public String userNameValidation(){
+
+        EditText userNameEditText = findViewById(R.id.editTextUser);
+        String userName = String.valueOf(userNameEditText.getText());
+
+        if (userName.isEmpty()){
+            Toast.makeText(this, "Please enter your username!", Toast.LENGTH_LONG).show();
+            return null;
+        }
+
+        return userName;
+    }
+
+    public String eventValidation(){
+
+        Spinner eventSpinner= (Spinner) findViewById(R.id.spinnerEvent);
+        int eventPosition = eventSpinner.getSelectedItemPosition();
+
+        if (eventPosition == 0){
+
+            Toast.makeText(this, "Please select an event from the list!", Toast.LENGTH_LONG).show();
+            return null;
+        }
+
+        return eventList.get(eventSpinner.getSelectedItemPosition());
+    }
+
     private List<String> parseResponse(InputStream response) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(response,"UTF-8"));
         try {
@@ -123,50 +167,5 @@ public class MainActivity extends AppCompatActivity
         }
         reader.endObject();
         return eventName;
-    }
-
-    public void loginClick(View view){
-        Intent intent = new Intent(this, EventLandingActivity.class);
-
-        String userName = userNameValidation();
-
-        if (userName == null)
-            return;
-
-        String eventSelected = eventValidation();
-
-        if( eventSelected == null)
-            return;
-
-        intent.putExtra(EXTRA_MESSAGE, eventSelected);
-        startActivity(intent);
-    }
-
-    public String userNameValidation(){
-
-        EditText userNameEditText = findViewById(R.id.editTextUser);
-        String userName = String.valueOf(userNameEditText.getText());
-
-        if (userName.isEmpty()){
-            Toast.makeText(this, "Please enter your username!", Toast.LENGTH_LONG).show();
-            return null;
-        }
-
-        return userName;
-    }
-
-    public String eventValidation(){
-
-        Spinner eventSpinner= (Spinner) findViewById(R.id.spinnerEvent);
-        String[] eventList = getResources().getStringArray(R.array.testEventList);
-        int eventPosition = eventSpinner.getSelectedItemPosition();
-
-        if (eventPosition == 0){
-
-            Toast.makeText(this, "Please select an event from the list!", Toast.LENGTH_LONG).show();
-            return null;
-        }
-
-        return eventList[eventSpinner.getSelectedItemPosition()];
     }
 }
