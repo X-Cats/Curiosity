@@ -9,136 +9,184 @@
         android:id="@+id/button33"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="#"
         android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        tools:layout_editor_absoluteY="500dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/button34"
+        app:layout_constraintTop_toBottomOf="@+id/button35"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button34"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
         android:text="#"
         android:textSize="8sp"
-        tools:layout_editor_absoluteX="302dp"
-        tools:layout_editor_absoluteY="500dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText9"
+        app:layout_constraintTop_toBottomOf="@+id/button36"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button35"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginBottom="112dp"
+        android:layout_marginEnd="16dp"
         android:text="Fail"
         android:textSize="3sp"
-        tools:layout_editor_absoluteX="351dp"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button36"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="28dp"
         android:text="Succcess"
         android:textSize="3sp"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintEnd_toStartOf="@+id/button35"
+        app:layout_constraintTop_toBottomOf="@+id/button9" />
 
     <Button
         android:id="@+id/button14"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:text="#"
         android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/button16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/button3"
-        tools:layout_editor_absoluteY="346dp" />
+        app:layout_constraintTop_toBottomOf="@+id/button12"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button15"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="#"
         android:textSize="8sp"
-        tools:layout_editor_absoluteX="302dp"
-        tools:layout_editor_absoluteY="346dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button17"
+        app:layout_constraintEnd_toStartOf="@+id/button14"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editText9"
+        app:layout_constraintTop_toBottomOf="@+id/button13"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button16"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="16dp"
         android:text="Fail"
         android:textSize="3sp"
-        tools:layout_editor_absoluteX="351dp"
-        tools:layout_editor_absoluteY="402dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button17"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginBottom="200dp"
         android:text="Succcess"
         android:textSize="3sp"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        tools:layout_editor_absoluteY="401dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button16" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="#"
         android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        tools:layout_editor_absoluteY="432dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/button9"
+        app:layout_constraintTop_toBottomOf="@+id/button16" />
 
     <Button
         android:id="@+id/button9"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginStart="60dp"
         android:text="#"
         android:textSize="8sp"
-        tools:layout_editor_absoluteX="302dp"
-        tools:layout_editor_absoluteY="432dp" />
+        app:layout_constraintStart_toEndOf="@+id/editText13"
+        app:layout_constraintTop_toBottomOf="@+id/button17" />
 
     <Button
         android:id="@+id/button12"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
         android:text="Fail"
         android:textSize="3sp"
-        tools:layout_editor_absoluteX="351dp"
-        tools:layout_editor_absoluteY="316dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/button13"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:text="Succcess"
         android:textSize="3sp"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        tools:layout_editor_absoluteY="316dp" />
+        app:layout_constraintEnd_toStartOf="@+id/button12"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editText7"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp"
         android:text="Fail"
         android:textSize="3sp"
-        tools:layout_editor_absoluteX="351dp"
-        tools:layout_editor_absoluteY="220dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginTop="24dp"
         android:text="Succcess"
         android:textSize="3sp"
         app:layout_constraintEnd_toStartOf="@+id/button6"
-        tools:layout_editor_absoluteY="220dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginStart="28dp"
         android:text="#"
         android:textSize="8sp"
-        tools:layout_editor_absoluteX="302dp"
-        tools:layout_editor_absoluteY="250dp" />
+        app:layout_constraintStart_toEndOf="@+id/editText8"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
 
     <TextView
         android:id="@+id/textView13"
@@ -172,11 +220,11 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="Exchange Delivery"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:layout_constraintVertical_bias="0.253"
-        tools:layout_editor_absoluteX="7dp" />
+        app:layout_constraintVertical_bias="0.449"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/textView23"
@@ -187,13 +235,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Scale"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <TextView
         android:id="@+id/textView22"
@@ -204,13 +252,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Switch"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView18"
@@ -279,11 +326,11 @@
     <Button
         android:id="@+id/button18"
         android:layout_width="80dp"
-        android:layout_height="44dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="40dp"
-        android:text="Next"
+        android:layout_height="46dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="36dp"
         android:onClick="scoutMatch3Click"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -307,13 +354,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Opposite Switch"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/textView22"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintVertical_bias="0.776" />
 
     <RadioButton
         android:id="@+id/radioButton18"
@@ -333,9 +380,121 @@
         android:id="@+id/button2"
         android:layout_width="49dp"
         android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="12dp"
         android:text="#"
         android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/button3"
-        tools:layout_editor_absoluteY="250dp" />
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="49dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="92dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editText9"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/textView15" />
+
+    <EditText
+        android:id="@+id/editText12"
+        android:layout_width="49dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/editText7"
+        app:layout_constraintEnd_toStartOf="@+id/editText9"
+        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/editText10"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editText13"
+        android:layout_width="49dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/editText9"
+        app:layout_constraintEnd_toStartOf="@+id/button17"
+        app:layout_constraintTop_toBottomOf="@+id/editText11"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editText10"
+        android:layout_width="49dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/editText9"
+        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <EditText
+        android:id="@+id/editText11"
+        android:layout_width="49dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/button13"
+        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="49dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="92dp"
+        android:layout_marginEnd="44dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button36" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="49dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="92dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/editText10"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        app:layout_constraintVertical_bias="0.018" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="49dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="92dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintStart_toEndOf="@+id/editText5"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
 </android.support.constraint.ConstraintLayout>
