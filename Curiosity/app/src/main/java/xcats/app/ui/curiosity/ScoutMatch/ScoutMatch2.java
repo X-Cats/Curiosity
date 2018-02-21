@@ -3,10 +3,14 @@ package xcats.app.ui.curiosity.ScoutMatch;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -77,11 +81,49 @@ public class ScoutMatch2 extends AppCompatActivity{
         TextView teamNumView = findViewById(R.id.textView10);
         String teamNum = String.valueOf(teamNumView.getText());
 
+        ToggleButton findColor = findViewById(R.id.toggleButton3);
 
         intent.putExtra("color", color);
 
         intent.putExtra(EXTRA_MESSAGE, teamNum);
         startActivity(intent);
+
+    }
+
+    public void colorChange (View view) {
+        int id = view.getId();
+        String clickedButtonName = view.getResources().getResourceName(id);
+        Log.d("ScoutMatch1", "The current button name is" + clickedButtonName);
+        Button pairButton = null;
+
+        if (clickedButtonName.equals("xcats.app.ui.curiosity:id/buttonRedSwitchTop"))
+            pairButton = (Button) findViewById(R.id.buttonRedSwitchBottom);
+        else if (clickedButtonName.equals("xcats.app.ui.curiosity:id/buttonScaleTop"))
+            pairButton = (Button) findViewById(R.id.buttonScaleBottom);
+        else if (clickedButtonName.equals("xcats.app.ui.curiosity:id/buttonBlueSwitchTop"))
+            pairButton = (Button) findViewById(R.id.buttonBlueSwitchBottom);
+        else if (clickedButtonName.equals("xcats.app.ui.curiosity:id/buttonRedSwitchBottom"))
+            pairButton = (Button) findViewById(R.id.buttonRedSwitchTop);
+        else if (clickedButtonName.equals("xcats.app.ui.curiosity:id/buttonScaleBottom"))
+            pairButton = (Button) findViewById(R.id.buttonScaleTop);
+        else if (clickedButtonName.equals("xcats.app.ui.curiosity:id/buttonBlueSwitchBottom"))
+            pairButton = (Button) findViewById(R.id.buttonBlueSwitchTop);
+
+        int color = Color.TRANSPARENT;
+        Drawable background = view.getBackground();
+        if (background instanceof ColorDrawable)
+            color = ((ColorDrawable) background).getColor();
+
+        Log.d("ScoutMatch1", "The current color is: " + color);
+
+        if (color == -65536){
+            view.setBackgroundColor(getResources().getColor(R.color.blue));
+            pairButton.setBackgroundColor(getResources().getColor(R.color.red));
+        } else {
+            view.setBackgroundColor(getResources().getColor(R.color.red));
+            pairButton.setBackgroundColor(getResources().getColor(R.color.blue));
+        }
+
 
     }
 
