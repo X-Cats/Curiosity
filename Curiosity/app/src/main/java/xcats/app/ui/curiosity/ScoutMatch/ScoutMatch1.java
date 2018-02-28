@@ -26,12 +26,32 @@ import xcats.app.ui.curiosity.R;
 
 public class ScoutMatch1 extends AppCompatActivity{
 
+    final static String tbaKey = "U0rx6iHZYLFx1InrycvsfhYuxgRQPORyDM07f4Ekz2fHfftxJWAbIpzMD9SIl1sd";
+    final static String tbaHeader = "X-TBA-Auth-Key";
+
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scout1);
+
+        blueAllianceTeamRetrieval();
+    }
+
+    private void blueAllianceTeamRetrieval() {
+        // TODO: Add code for getting a list of teams and setting them to spinner
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+            .header(tbaHeader, tbaKey)
+            .url()
+
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
 
         RadioButton radioButton =  findViewById(R.id.radioButton);
         RadioButton radioButton2 =  findViewById(R.id.radioButton2);
@@ -46,14 +66,6 @@ public class ScoutMatch1 extends AppCompatActivity{
         radioButton4.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
         radioButton5.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
         radioButton6.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
-
-        blueAllianceTeamRetrieval();
-    }
-
-    private void blueAllianceTeamRetrieval() {
-
-        // TODO: Add code for getting a list of teams and setting them to spinner
-
     }
 
     public void scoutMatch1Click(View view){

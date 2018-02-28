@@ -2,17 +2,10 @@
 <resources>
     <string-array name="testEventList">
         <item>Select an Event...</item>
-        <item>Finger Lakes Regional - Rochester, NY</item>
-        <item>FIRST Championships - Detroit, MI</item>
-        <item>Indiana Robotics Invitational - Indiana, USA</item>
     </string-array>
 
     <string-array name="testTeamList">
         <item>Select a Team...</item>
-        <item>191</item>
-        <item>1126</item>
-        <item>1511</item>
-        <item>3838</item>
     </string-array>
 
 </resources>

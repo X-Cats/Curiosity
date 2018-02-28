@@ -1,6 +1,8 @@
 package xcats.app.ui.curiosity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.icu.text.LocaleDisplayNames;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -28,18 +30,21 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.json.JSONArray;
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
 
-    final String tbaKey = "U0rx6iHZYLFx1InrycvsfhYuxgRQPORyDM07f4Ekz2fHfftxJWAbIpzMD9SIl1sd";
-    final String tbaHeader = "X-TBA-Auth-Key";
+    final static String tbaKey = "U0rx6iHZYLFx1InrycvsfhYuxgRQPORyDM07f4Ekz2fHfftxJWAbIpzMD9SIl1sd";
+    final static String tbaHeader = "X-TBA-Auth-Key";
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     List<String> eventList;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sharedPreferences = this.getSharedPreferences(
+            getString(R.string.app_name), Context.MODE_PRIVATE);
 
         blueAllianceEventRetrieval();
     }
@@ -101,6 +106,12 @@ public class MainActivity extends AppCompatActivity
         if( eventSelected == null)
             return;
 
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("selectedEvent", eventSelected);
+        editor.putString("userName",userName);
+        editor.commit();
+
         intent.putExtra(EXTRA_MESSAGE, eventSelected);
         startActivity(intent);
     }
@@ -123,13 +134,13 @@ public class MainActivity extends AppCompatActivity
         Spinner eventSpinner= (Spinner) findViewById(R.id.spinnerEvent);
         int eventPosition = eventSpinner.getSelectedItemPosition();
 
-        if (eventPosition == 0){
+        if (eventSpinner.getSelectedItem().toString().contains("Select an Event")){
 
             Toast.makeText(this, "Please select an event from the list!", Toast.LENGTH_LONG).show();
             return null;
         }
 
-        return eventList.get(eventSpinner.getSelectedItemPosition());
+        return eventList.get(eventPosition);
     }
 
     private List<String> parseResponse(InputStream response) throws IOException {
