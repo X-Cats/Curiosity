@@ -17,10 +17,13 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -38,9 +41,13 @@ public class MainActivity extends AppCompatActivity {
     final static String tbaHeader = "X-TBA-Auth-Key";
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
+    //Both the event name and event code in a string
     List<String> eventInfo;
+    //just the event name for spinner
     List<String> eventList;
+    //just the event code for saving
     List<String> eventCode;
+
     SharedPreferences sharedPreferences;
 
     @Override
@@ -50,6 +57,24 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = this.getSharedPreferences(
             getString(R.string.app_name), Context.MODE_PRIVATE);
+
+        Gson gson = new Gson();
+        String jsonEventList = sharedPreferences.getString("jsonEventList","empty");
+        String jsonEventCodes = sharedPreferences.getString("jsonEventCodes","empty");
+
+        if (jsonEventList.equalsIgnoreCase("empty") ||
+            jsonEventCodes.equalsIgnoreCase("empty") ) {
+            blueAllianceEventRetrieval();
+        }
+        else {
+
+            Type type = new TypeToken<List<String>>() {}.getType();
+
+            eventList = gson.fromJson(jsonEventList, type);
+            eventCode = gson.fromJson(jsonEventCodes, type);
+
+            updateEventSpinner();
+        }
 
         blueAllianceEventRetrieval();
     }
@@ -84,11 +109,24 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             updateEventSpinner();
+                            updateSavedTeamInfo();
                         }
                     });
                 }
             }
         });
+    }
+
+    private void updateSavedTeamInfo() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String jsonEventList = gson.toJson(eventList);
+        String jsonEventCodes = gson.toJson(eventCode);
+
+        editor.putString("jsonEventList", jsonEventList);
+        editor.putString("jsonEventCodes", jsonEventCodes);
+
+        editor.commit();
     }
 
     private void parseEventList() {

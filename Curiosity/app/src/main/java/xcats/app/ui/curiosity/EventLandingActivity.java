@@ -45,4 +45,13 @@ public class EventLandingActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Analyze1.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        if (true) {
+
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
