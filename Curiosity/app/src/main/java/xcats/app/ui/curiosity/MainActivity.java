@@ -20,8 +20,10 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -35,7 +37,10 @@ public class MainActivity extends AppCompatActivity {
     final static String tbaKey = "U0rx6iHZYLFx1InrycvsfhYuxgRQPORyDM07f4Ekz2fHfftxJWAbIpzMD9SIl1sd";
     final static String tbaHeader = "X-TBA-Auth-Key";
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+
+    List<String> eventInfo;
     List<String> eventList;
+    List<String> eventCode;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -66,12 +71,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                if(!response.isSuccessful()){
+                if (!response.isSuccessful()){
                     throw new IOException("Unexpected code " + response);
                 }
-                else{
-                    eventList = parseResponse(response.body().byteStream());
-                    Log.d("parsedEventList",eventList.toString());
+                else {
+                    eventInfo = parseResponse(response.body().byteStream());
+                    Log.d("parsedEventList", eventInfo.toString());
+
+                    parseEventList();
 
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
@@ -84,9 +91,28 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void parseEventList() {
+        if (!eventInfo.isEmpty()) {
+
+            eventList = new ArrayList<>();
+            eventCode = new ArrayList<>();
+
+            for(int i=0;i<eventInfo.size();i++) {
+
+                String[] split = eventInfo.get(i).split(":!:");
+
+                if (split.length == 2) {
+                    eventList.add(split[0]);
+                    eventCode.add(split[1]);
+                }
+            }
+        }
+    }
+
 
     private void updateEventSpinner() {
         Spinner eventSpinner = findViewById(R.id.spinnerEvent);
+
         ArrayAdapter<String> eventAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, eventList);
         eventAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -101,18 +127,22 @@ public class MainActivity extends AppCompatActivity {
         if (userName == null)
             return;
 
-        String eventSelected = eventValidation();
+        String[] eventSelected = eventValidation();
+
 
         if( eventSelected == null)
             return;
 
 
+        Log.d("LoginClick","Selected Event:" + eventSelected[0] + " Code: "+ eventCode.get(Integer.parseInt(eventSelected[1])));
+
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("selectedEvent", eventSelected);
+        editor.putString("selectedEvent", eventSelected[0]);
+        editor.putString("selectedEventCode", eventCode.get(Integer.parseInt(eventSelected[1])));
         editor.putString("userName",userName);
         editor.commit();
 
-        intent.putExtra(EXTRA_MESSAGE, eventSelected);
+        intent.putExtra(EXTRA_MESSAGE, eventSelected[0]);
         startActivity(intent);
     }
 
@@ -129,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
         return userName;
     }
 
-    public String eventValidation(){
+    public String[] eventValidation(){
 
         Spinner eventSpinner= (Spinner) findViewById(R.id.spinnerEvent);
         int eventPosition = eventSpinner.getSelectedItemPosition();
@@ -140,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
 
-        return eventList.get(eventPosition);
+        return new String[]{eventList.get(eventPosition), String.valueOf(eventPosition)};
     }
 
     private List<String> parseResponse(InputStream response) throws IOException {
@@ -166,17 +196,20 @@ public class MainActivity extends AppCompatActivity {
     public String readMessage(JsonReader reader) throws IOException {
 
         String eventName = null;
+        String eventCode = null;
 
         reader.beginObject();
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals("name")) {
                 eventName = reader.nextString();
+            } else if (name.equals("event_code")) {
+                eventCode = reader.nextString();
             } else {
                 reader.skipValue();
             }
         }
         reader.endObject();
-        return eventName;
+        return eventName + ":!:" + eventCode;
     }
 }

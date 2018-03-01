@@ -43,9 +43,9 @@ public class ScoutMatch1 extends AppCompatActivity{
         // TODO: Add code for getting a list of teams and setting them to spinner
         OkHttpClient client = new OkHttpClient();
 
-        Request request = new Request.Builder()
+       /* Request request = new Request.Builder()
             .header(tbaHeader, tbaKey)
-            .url()
+            .url();*/
 
     }
 
