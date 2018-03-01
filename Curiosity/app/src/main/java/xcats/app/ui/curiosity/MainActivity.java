@@ -3,37 +3,28 @@ package xcats.app.ui.curiosity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.icu.text.LocaleDisplayNames;
-import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-
-import android.widget.SpinnerAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.json.JSONArray;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = this.getSharedPreferences(
             getString(R.string.app_name), Context.MODE_PRIVATE);
+
+
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
 
         Gson gson = new Gson();
         String jsonEventList = sharedPreferences.getString("jsonEventList","empty");
@@ -109,9 +107,10 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             updateEventSpinner();
-                            updateSavedTeamInfo();
                         }
                     });
+
+                    updateSavedTeamInfo();
                 }
             }
         });
@@ -175,6 +174,13 @@ public class MainActivity extends AppCompatActivity {
         Log.d("LoginClick","Selected Event:" + eventSelected[0] + " Code: "+ eventCode.get(Integer.parseInt(eventSelected[1])));
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        if(!eventSelected[0].equalsIgnoreCase(sharedPreferences.getString("selectedEvent","nada"))){
+            //if the newly selected event is different than the previously saved one, we need to throw away our team list
+            editor.putString("jsonTeamList","empty");;
+
+        }
+
         editor.putString("selectedEvent", eventSelected[0]);
         editor.putString("selectedEventCode", eventCode.get(Integer.parseInt(eventSelected[1])));
         editor.putString("userName",userName);

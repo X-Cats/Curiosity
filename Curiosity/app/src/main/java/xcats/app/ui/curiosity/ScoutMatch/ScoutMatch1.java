@@ -108,9 +108,11 @@ public class ScoutMatch1 extends AppCompatActivity{
                         @Override
                         public void run() {
                             updateTeamSpinner();
-                            updateSavedTeamInfo();
+
                         }
                     });
+
+                    updateSavedTeamInfo();
                 }
             }
         });
