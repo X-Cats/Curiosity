@@ -3,16 +3,13 @@ package xcats.app.ui.curiosity.ScoutMatch;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.ToggleButton;
+
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 
 import xcats.app.ui.curiosity.R;
 
@@ -41,33 +38,42 @@ public class ScoutMatch3 extends AppCompatActivity
 
         Log.d("Curiosity", ""+ teamNum + color);
 
-        TextView teamNumView = findViewById(R.id.textView14);
+        TextView teamNumView = findViewById(R.id.teamNumberScout3);
         teamNumView.setText(teamNum);
 
-        RadioButton radioButton18= findViewById(R.id.radioButton18);
+        styleButtons();
+    }
 
-        if (color.equals("Red"))
-        {
-            radioButton18.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-        }
-
-        else
-        {
-            radioButton18.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-        }
+    private void styleButtons() {
 
     }
 
-        public void scoutMatch3Click(View view){
+    public void scoutMatch3Click(View view){
         Intent intent = new Intent(this, ScoutMatch4.class);
 
-        TextView teamNumView = findViewById(R.id.textView14);
-        String teamNum = String.valueOf(teamNumView.getText());
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        intent.putExtra("color", color);
+        ElegantNumberButton acquireGroundButton = findViewById(R.id.acquireGroundButton);
+        ElegantNumberButton acquireExchangeButton = findViewById(R.id.acquireExchangeButton);
+        ElegantNumberButton ownSwitchCounter = findViewById(R.id.ownSwitchSuccessCounter);
+        ElegantNumberButton ownSwitchFailureCounter = findViewById(R.id.ownSwitchFailureCounter);
+        ElegantNumberButton scaleCounter = findViewById(R.id.scaleSuccessCounter);
+        ElegantNumberButton scaleFailureCounter = findViewById(R.id.scaleFailureCounter);
+        ElegantNumberButton oppSwitchCounter = findViewById(R.id.oppSwitchSuccessCounter);
+        ElegantNumberButton oppSwitchFailureCounter = findViewById(R.id.oppSwitchFailureCounter);
+        ElegantNumberButton exchangedCounter = findViewById(R.id.cubesExchangedCounter);
 
-        intent.putExtra(EXTRA_MESSAGE, teamNum);
+        editor.putInt("cubesAcquiredGround", Integer.parseInt(acquireGroundButton.getNumber()));
+        editor.putInt("cubesAcquiredExchange",Integer.parseInt(acquireExchangeButton.getNumber()));
+        editor.putInt("cubesOwnSwitch",Integer.parseInt(ownSwitchCounter.getNumber()));
+        editor.putInt("cubesOwnSwitchFail",Integer.parseInt(ownSwitchFailureCounter.getNumber()));
+        editor.putInt("cubesScale",Integer.parseInt(scaleCounter.getNumber()));
+        editor.putInt("cubesScaleFail",Integer.parseInt(scaleFailureCounter.getNumber()));
+        editor.putInt("cubesOppSwitch",Integer.parseInt(oppSwitchCounter.getNumber()));
+        editor.putInt("cubesOppSwitchFail",Integer.parseInt(oppSwitchFailureCounter.getNumber()));
+        editor.putInt("cubesExchanged",Integer.parseInt(exchangedCounter.getNumber()));
 
+        editor.commit();
         startActivity(intent);
 
     }

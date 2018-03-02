@@ -1,504 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/button33"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="68dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/graey"
-        android:text="#"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/button34"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="68dp"
-        android:layout_marginStart="8dp"
-        android:background="@color/graey"
-        android:text="#"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button33"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editText9" />
-
-    <Button
-        android:id="@+id/button35"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/graey"
-        android:text="Fail"
-        android:textSize="3sp"
-        app:layout_constraintBottom_toTopOf="@+id/button33"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/button36"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:background="@color/graey"
-        android:text="Succcess"
-        android:textSize="3sp"
-        app:layout_constraintBottom_toTopOf="@+id/button34"
-        app:layout_constraintEnd_toStartOf="@+id/button35" />
-
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/graey"
-        android:text="#"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toTopOf="@+id/button16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button12"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@color/graey"
-        android:text="#"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toTopOf="@+id/button17"
-        app:layout_constraintEnd_toStartOf="@+id/button14"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editText11"
-        app:layout_constraintTop_toBottomOf="@+id/button13"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button16"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="52dp"
-        android:background="@color/graey"
-        android:text="Fail"
-        android:textSize="3sp"
-        app:layout_constraintBottom_toTopOf="@+id/button36"
-        app:layout_constraintEnd_toStartOf="@+id/button8" />
-
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:background="@color/graey"
-        android:text="Succcess"
-        android:textSize="3sp"
-        app:layout_constraintBottom_toTopOf="@+id/button16"
-        app:layout_constraintEnd_toStartOf="@+id/button9" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="52dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/graey"
-        android:text="#"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toTopOf="@+id/button35"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/graey"
-        android:text="#"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="32dp"
-        android:background="@color/graey"
-        android:text="Fail"
-        android:textSize="3sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:text="Succcess"
-        android:textSize="3sp"
-        android:background="@color/graey"
-        app:layout_constraintEnd_toStartOf="@+id/button12"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editText7"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/graey"
-        android:text="Fail"
-        android:textSize="3sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/graey"
-        android:text="Succcess"
-        android:textSize="3sp"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="32dp"
-        android:background="@color/graey"
-        android:text="#"
-        android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/editText8"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/teleopTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="39dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Teleop - Team"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView14"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_toStartOf="@+id/acquireExchangeCounter"
+        android:text="TeleOp - Team"
+        android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/teamNumberScout3"
         android:layout_width="40dp"
         android:layout_height="32dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_alignBaseline="@+id/teleopTitleTextView"
+        android:layout_alignBottom="@+id/teleopTitleTextView"
+        android:layout_alignEnd="@+id/acquisitionHeader"
         android:text="#"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="24sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/teleopTitleTextView"
+        android:layout_marginEnd="8dp"
+        android:background="@color/graey"
+        android:id="@+id/view2" />
 
     <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="27dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Exchange Delivery"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:layout_constraintVertical_bias="0.449"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/acquisitionHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_below="@+id/view2"
+        android:layout_centerHorizontal="true"
+        android:text="PowerCube Acquisition"
+        android:textSize="20sp" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/acquireGroundButton"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/acquisitionHeader"
+        android:layout_below="@+id/acquisitionHeader"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Scale"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22"
-        app:layout_constraintVertical_bias="0.264" />
+        android:text="Ground" />
 
     <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
+        android:id="@+id/acquireGroundCounter"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Switch"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.022"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:text="Box Acquisition"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView21"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="74dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
-        android:text="Station"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
-        app:layout_constraintStart_toEndOf="@+id/button11"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginTop="8dp"
-        android:text="#station"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="74dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
+        android:layout_below="@+id/acquisitionHeader"
+        android:layout_marginTop="6dp"
+        android:layout_toStartOf="@+id/acquisitionHeader"
         android:text="Ground"
-        android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/acquireExchangeButton"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/acquisitionHeader"
+        android:layout_toEndOf="@+id/teamNumberScout3" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/acquireExchangeCounter"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/acquireGroundCounter"
+        android:layout_alignBottom="@+id/acquireGroundCounter"
+        android:layout_alignEnd="@+id/deliveryHeader"
+        android:text="Exchange"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/acquireGroundButton"
+        android:layout_marginTop="6dp"
+        android:background="@color/graey" />
+
+    <TextView
+        android:id="@+id/deliveryHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_alignTop="@+id/view"
+        android:layout_centerHorizontal="true"
+        android:text="PowerCube Delivery"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/ownSwitchSuccessText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ownSwitchFailureCounter"
+        android:layout_alignEnd="@+id/teleopTitleTextView"
+        android:text="Own Switch: Success"
+        android:textSize="20sp" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/ownSwitchSuccessCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignEnd="@+id/view2"
+        android:layout_below="@+id/deliveryHeader"
+        android:layout_marginEnd="11dp"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/ownSwitchFailureText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ownSwitchFailureCounter"
+        android:layout_alignEnd="@+id/ownSwitchSuccessText"
+        android:layout_alignStart="@+id/ownSwitchSuccessText"
+        android:text="Own Switch: Fail"
+        android:textSize="20sp" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/ownSwitchFailureCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/ownSwitchSuccessCounter"
+        android:layout_below="@+id/ownSwitchSuccessCounter"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:id="@+id/scaleSuccessText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/scaleSuccessCounter"
+        android:layout_alignEnd="@+id/ownSwitchSuccessText"
+        android:layout_alignStart="@+id/ownSwitchFailureText"
+        android:textSize="20sp"
+        android:text="Scale: Success"/>
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/scaleSuccessCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/ownSwitchFailureCounter"
+        android:layout_below="@+id/ownSwitchFailureCounter"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:id="@+id/scaleFailureText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/scaleFailureCounter"
+        android:layout_alignEnd="@+id/scaleSuccessText"
+        android:layout_alignStart="@+id/ownSwitchFailureText"
+        android:text="Scale: Fail"
+        android:textSize="20sp" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/scaleFailureCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/scaleSuccessCounter"
+        android:layout_below="@+id/scaleSuccessCounter"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:id="@+id/oppSwitchSuccessText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/oppSwitchSuccessCounter"
+        android:layout_alignEnd="@+id/ownSwitchSuccessText"
+        android:layout_alignStart="@+id/ownSwitchFailureText"
+        android:text="Opp Switch: Success"
+        android:textSize="20sp" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/oppSwitchSuccessCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/scaleFailureCounter"
+        android:layout_below="@+id/scaleFailureCounter"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:id="@+id/oppSwitchFailureText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/oppSwitchFailureCounter"
+        android:layout_alignEnd="@+id/scaleSuccessText"
+        android:layout_alignStart="@+id/ownSwitchFailureText"
+        android:text="Own Switch: Fail"
+        android:textSize="20sp" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/oppSwitchFailureCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/scaleSuccessCounter"
+        android:layout_below="@+id/oppSwitchSuccessCounter"
+        android:layout_marginTop="18dp" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/oppSwitchFailureText"
+        android:layout_marginTop="9dp"
+        android:background="@color/graey" />
+
+    <TextView
+        android:id="@+id/exchangeHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/oppSwitchFailureText"
+        android:layout_below="@+id/view3"
+        android:layout_marginTop="10dp"
+        android:text="PowerCubes Exchanged"
+        android:textSize="20sp" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/cubesExchangedCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_below="@+id/exchangeHeader"
         android:layout_marginTop="16dp"
-        android:text="#ground"
-        app:layout_constraintEnd_toStartOf="@+id/textView19"
-        app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        android:layout_toStartOf="@+id/acquireExchangeCounter" />
 
     <Button
         android:id="@+id/button18"
         android:layout_width="80dp"
         android:layout_height="46dp"
+        android:layout_alignEnd="@+id/oppSwitchFailureCounter"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:onClick="scoutMatch3Click"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="Next" />
 
-    <Button
-        android:id="@+id/button19"
-        android:layout_width="81dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="32dp"
-        android:text="Back"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Opposite Switch"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView22"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776" />
 
-    <RadioButton
-        android:id="@+id/radioButton18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="RadioButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/graey"
-        android:text="#"
-        android:textSize="8sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="49dp"
-        android:layout_height="39dp"
-        android:layout_marginBottom="92dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editText9"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toEndOf="@+id/textView15" />
-
-    <EditText
-        android:id="@+id/editText12"
-        android:layout_width="49dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="56dp"
-        android:layout_marginStart="48dp"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editText7"
-        app:layout_constraintStart_toEndOf="@+id/textView23" />
-
-    <EditText
-        android:id="@+id/editText13"
-        android:layout_width="49dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editText9"
-        app:layout_constraintEnd_toStartOf="@+id/button17"
-        app:layout_constraintStart_toEndOf="@+id/editText12"
-        app:layout_constraintTop_toBottomOf="@+id/editText11"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/editText10"
-        android:layout_width="49dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="56dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editText12"
-        app:layout_constraintEnd_toStartOf="@+id/editText9"
-        app:layout_constraintHorizontal_bias="0.753"
-        app:layout_constraintStart_toEndOf="@+id/textView22" />
-
-    <EditText
-        android:id="@+id/editText11"
-        android:layout_width="49dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/button13"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" />
-
-    <EditText
-        android:id="@+id/editText9"
-        android:layout_width="49dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="84dp"
-        android:layout_marginEnd="40dp"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button36" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="49dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="92dp"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editText10"
-        app:layout_constraintStart_toEndOf="@+id/textView21"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:layout_constraintVertical_bias="0.018" />
-
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="49dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="92dp"
-        android:ems="10"
-        android:enabled="false"
-        app:layout_constraintEnd_toStartOf="@+id/button7"
-        app:layout_constraintStart_toEndOf="@+id/editText5"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
