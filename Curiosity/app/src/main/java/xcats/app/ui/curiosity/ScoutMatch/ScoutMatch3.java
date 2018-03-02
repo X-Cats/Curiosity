@@ -1,6 +1,8 @@
 package xcats.app.ui.curiosity.ScoutMatch;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +25,7 @@ public class ScoutMatch3 extends AppCompatActivity
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     String color;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,10 +33,11 @@ public class ScoutMatch3 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scout3);
 
+        sharedPreferences = this.getSharedPreferences(
+                getString(R.string.app_name), Context.MODE_PRIVATE);
 
-        Intent i = getIntent();
-        color = i.getStringExtra("color");
-        String teamNum = i.getStringExtra(ScoutMatch1.EXTRA_MESSAGE);
+        String teamNum = sharedPreferences.getString("teamNumber","0");
+        color = sharedPreferences.getString("allianceColor","Red");
 
         Log.d("Curiosity", ""+ teamNum + color);
 

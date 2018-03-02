@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/robotPosRadioGroup"
         android:layout_width="315dp"
         android:layout_height="190dp"
         android:layout_marginBottom="8dp"
@@ -192,7 +192,7 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/robotPosRadioGroup" />
 
     <EditText
         android:id="@+id/editText4"

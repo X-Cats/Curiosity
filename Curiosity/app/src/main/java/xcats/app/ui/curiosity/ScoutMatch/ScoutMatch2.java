@@ -1,12 +1,15 @@
 package xcats.app.ui.curiosity.ScoutMatch;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +17,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import xcats.app.ui.curiosity.R;
@@ -27,6 +31,7 @@ public class ScoutMatch2 extends AppCompatActivity{
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     String color;
+    SharedPreferences sharedPreferences;
 
     @SuppressLint("NewApi")
     @Override
@@ -35,22 +40,28 @@ public class ScoutMatch2 extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scout2);
 
-        Intent i = getIntent();
-        String teamNum = i.getStringExtra(ScoutMatch1.EXTRA_MESSAGE);
-        color = i.getStringExtra("color");
-        Log.d("Curiosity", ""+ teamNum);
+        sharedPreferences = this.getSharedPreferences(
+                getString(R.string.app_name), Context.MODE_PRIVATE);
+
+        String teamNum = sharedPreferences.getString("teamNumber","0");
+        color = sharedPreferences.getString("allianceColor","Red");
+        Log.d("Curiosity", ""+ teamNum + color);
 
         TextView teamNumView = findViewById(R.id.textView10);
         teamNumView.setText(teamNum);
 
-        RadioButton radioButton7= findViewById(R.id.radioButton7);
-        RadioButton radioButton8= findViewById(R.id.radioButton8);
-        RadioButton radioButton9= findViewById(R.id.radioButton9);
-        RadioButton radioButton10= findViewById(R.id.radioButton10);
-        RadioButton radioButton11= findViewById(R.id.radioButton11);
-        RadioButton radioButton12= findViewById(R.id.radioButton12);
-        RadioButton radioButton13 =  findViewById(R.id.radioButton13);
-        RadioButton radioButton14 =  findViewById(R.id.radioButton14);
+        styleRadioButtons();
+    }
+
+    private void styleRadioButtons() {
+        RadioButton radioButton7= findViewById(R.id.autoBaselineSuccessRadioButton);
+        RadioButton radioButton8= findViewById(R.id.autoBaselineNoAttRadioButton);
+        RadioButton radioButton9= findViewById(R.id.autoBaselineFailedRadioButton);
+        RadioButton radioButton10= findViewById(R.id.autoPowerCubeSuccessRadioButton);
+        RadioButton radioButton11= findViewById(R.id.autoPowerCubeNoAttRadioButton);
+        RadioButton radioButton12= findViewById(R.id.autoPowerCubeFailedRadioButton);
+        RadioButton radioButton13 =  findViewById(R.id.autoPowerCubeScaleRadioButton);
+        RadioButton radioButton14 =  findViewById(R.id.autoPowerCubeSwitchRadioButton);
 
         if (color.equals("Red")){
             radioButton7.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
@@ -78,22 +89,136 @@ public class ScoutMatch2 extends AppCompatActivity{
 
     public void scoutMatch2Click(View view){
         Intent intent = new Intent(this, ScoutMatch3.class);
-        TextView teamNumView = findViewById(R.id.textView10);
-        String teamNum = String.valueOf(teamNumView.getText());
 
-        ToggleButton findColor = findViewById(R.id.toggleButton3);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        intent.putExtra("color", color);
+        Button redSwitchBottom = findViewById(R.id.buttonRedSwitchBottom);
+        Button scaleBottom = findViewById(R.id.buttonScaleBottom);
+        Button blueSwitchBottom = findViewById(R.id.buttonBlueSwitchBottom);
 
-        intent.putExtra(EXTRA_MESSAGE, teamNum);
+        RadioGroup autoBaselineRadioGroup = findViewById(R.id.autoBaselineRadioGroup);
+        RadioGroup autoPowerCubeRadioGroup = findViewById(R.id.autoPowerCubeRadioGroup);
+        int checkedBaseline = autoBaselineRadioGroup.getCheckedRadioButtonId();
+        int checkedPowerCube = autoPowerCubeRadioGroup.getCheckedRadioButtonId();
+
+        if(checkedBaseline == -1
+                || checkedPowerCube == -1 ){
+            Toast.makeText(getApplicationContext(),
+                    "Please make sure to select an option for each field!",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        RadioGroup autoPowerCubeLocationRadioGroup = findViewById(R.id.autoPowerCubeLocationRadioGroup);
+        int checkedPowerCubeLocation = autoPowerCubeLocationRadioGroup.getCheckedRadioButtonId();
+
+        if(checkedPowerCube != R.id.autoPowerCubeNoAttRadioButton &&
+                checkedPowerCubeLocation == -1) {
+            Toast.makeText(getApplicationContext(),
+                    "Please select where the power cube was (attempted to be?) placed!",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String redSwitchPos = buttonColorDeterminator(redSwitchBottom);
+        String scalePos = buttonColorDeterminator(scaleBottom);
+        String blueSwitchPos = buttonColorDeterminator(blueSwitchBottom);
+
+        String autoBaseline = baselineInfo(checkedBaseline);
+        String autoPowerCube = powerCubeInfo(checkedPowerCube);
+        String autoPowerCubeLocation = powerCubeLocation(checkedPowerCubeLocation);
+
+        editor.putString("redSwitchPos", redSwitchPos);
+        editor.putString("scalePos", scalePos);
+        editor.putString("blueSwitchPos", blueSwitchPos);
+
+        editor.putString("autoBaseline",autoBaseline);
+        editor.putString("autoPowerCube", autoPowerCube);
+        editor.putString("autoPowerCubeLocation", autoPowerCubeLocation);
+
+        editor.commit();
+
         startActivity(intent);
+
+    }
+
+    private String baselineInfo(int checkedBaseline) {
+        switch (checkedBaseline) {
+            case R.id.autoBaselineSuccessRadioButton:
+                return "Success";
+            case R.id.autoBaselineNoAttRadioButton:
+                return "No Attempt";
+            case R.id.autoBaselineFailedRadioButton:
+                return "Failure";
+            default:
+                return "";
+        }
+    }
+
+    private String powerCubeInfo(int checkedPowerCube) {
+        switch (checkedPowerCube) {
+            case R.id.autoPowerCubeSuccessRadioButton:
+                return "Success";
+            case R.id.autoPowerCubeNoAttRadioButton:
+                return "No Attempt";
+            case R.id.autoPowerCubeFailedRadioButton:
+                return "Failure";
+            default:
+                return "";
+        }
+    }
+
+    private String powerCubeLocation(int checkedPowerCubeLocation) {
+        switch (checkedPowerCubeLocation) {
+            case R.id.autoPowerCubeSwitchRadioButton:
+                return "Switch";
+            case R.id.autoPowerCubeScaleRadioButton:
+                return "Scale";
+            default:
+                return "";
+        }
+    }
+
+    private String buttonColorDeterminator(View bottomButton) {
+
+        ColorDrawable allianceColor = new ColorDrawable();
+        boolean blueReversedPerspective = false;
+
+        Drawable bottomButtonState = bottomButton.getBackground();
+        int bottomButtonColor = 0;
+        if (bottomButtonState instanceof ColorDrawable)
+            bottomButtonColor = ((ColorDrawable) bottomButtonState).getColor();
+
+        switch (color) {
+            case "Red":
+                allianceColor.setColor(getResources().getColor(R.color.red));
+                break;
+            case "Blue":
+                allianceColor.setColor(getResources().getColor(R.color.blue));
+                blueReversedPerspective = true;
+                break;
+            default:
+                break;
+        }
+        if (blueReversedPerspective) {
+            if (allianceColor.getColor() == bottomButtonColor) {
+                return "L";
+            } else {
+                return "R";
+            }
+        } else {
+            if (allianceColor.getColor() == bottomButtonColor) {
+                return "R";
+            } else {
+                return "L";
+            }
+        }
+
+
 
     }
 
     public void colorChange (View view) {
         int id = view.getId();
         String clickedButtonName = view.getResources().getResourceName(id);
-        Log.d("ScoutMatch1", "The current button name is" + clickedButtonName);
         Button pairButton = null;
 
         if (clickedButtonName.equals("xcats.app.ui.curiosity:id/buttonRedSwitchTop"))
@@ -113,8 +238,6 @@ public class ScoutMatch2 extends AppCompatActivity{
         Drawable background = view.getBackground();
         if (background instanceof ColorDrawable)
             color = ((ColorDrawable) background).getColor();
-
-        Log.d("ScoutMatch1", "The current color is: " + color);
 
         if (color == -65536){
             view.setBackgroundColor(getResources().getColor(R.color.blue));

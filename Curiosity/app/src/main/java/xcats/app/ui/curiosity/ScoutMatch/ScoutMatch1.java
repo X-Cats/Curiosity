@@ -1,5 +1,6 @@
 package xcats.app.ui.curiosity.ScoutMatch;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,7 +16,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
@@ -74,7 +78,6 @@ public class ScoutMatch1 extends AppCompatActivity{
     }
 
     private void blueAllianceTeamRetrieval() {
-        // TODO: Add code for getting a list of teams and setting them to spinner
         String eventCode = sharedPreferences.getString("selectedEventCode",null);
 
         if (eventCode == null) {
@@ -196,16 +199,66 @@ public class ScoutMatch1 extends AppCompatActivity{
     public void scoutMatch1Click(View view){
         Intent intent = new Intent(this, ScoutMatch2.class);
 
-        Spinner teamNumSpinner= (Spinner) findViewById(R.id.teamListSpinner);
-        String[] teamNumList = getResources().getStringArray(R.array.testTeamList);
-        String teamNum = teamNumList[teamNumSpinner.getSelectedItemPosition()];
 
+        String teamNum = teamNumberFinder();
+
+        TextView matchNumEditText = findViewById(R.id.matchNumEditText);
         ToggleButton findColor = findViewById(R.id.toggleButton3);
-        String allianceColor = String.valueOf(findColor.getText());
-        intent.putExtra("color", allianceColor);
+        RadioGroup robotPosRadioGroup = findViewById(R.id.robotPosRadioGroup);
+        RadioGroup driverPosRadioGroup = findViewById(R.id.driverPosRadioGroup);
 
-        intent.putExtra(EXTRA_MESSAGE, teamNum);
+        if(robotPosRadioGroup.getCheckedRadioButtonId() == -1
+                || driverPosRadioGroup.getCheckedRadioButtonId() == -1 ){
+            Toast.makeText(getApplicationContext(),
+                    "Please make sure to select a position for both driver and robot!",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        RadioButton robotPosSelected = findViewById(robotPosRadioGroup.getCheckedRadioButtonId());
+        RadioButton driverPosSelected = findViewById(driverPosRadioGroup.getCheckedRadioButtonId());
+
+        String matchNum = matchNumEditText.getText().toString();
+        if(matchNum.isEmpty()){
+            Toast.makeText(getApplicationContext(),
+                    "Please enter a match number!",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String allianceColor = String.valueOf(findColor.getText());
+
+
+        String robotPos = robotPosSelected.getText().toString();
+
+
+        String driverPos = driverPosSelected.getText().toString();
+
+
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString("teamNumber", teamNum);
+        editor.putString("matchNumber", matchNum);
+        editor.putString("allianceColor", allianceColor);
+        editor.putString("robotPos", robotPos);
+        editor.putString("driverPos", driverPos);
+
+        editor.commit();
         startActivity(intent);
+    }
+
+    private String teamNumberFinder() {
+
+        // Get the team number selected from the spinner
+        Spinner teamNumSpinner= (Spinner) findViewById(R.id.teamListSpinner);
+
+        //Gets the team using appropriate position based on the appropriate team num list
+        if(!teamList.isEmpty() && !teamList.equals(null)){
+            return teamList.get(teamNumSpinner.getSelectedItemPosition());
+        }
+        else{
+            String[] teamNumList = getResources().getStringArray(R.array.testTeamList);
+            return teamNumList[teamNumSpinner.getSelectedItemPosition()];
+        }
     }
 
     public void colorChange (View view) {
