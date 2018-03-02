@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="testEventList">
-        <item>Select an Event...</item>
+        <item>Central New York Regional</item>
     </string-array>
 
     <string-array name="testTeamList">
-        <item>Select a Team...</item>
+        <item>145</item>
+        <item>1450</item>
+        <item>1518</item>
+        <item>1665</item>
+        <item>191</item>
+        <item>2</item>
+        <item>2016</item>
+        <item>2053</item>
+        <item>223</item>
+        <item>250</item>
+        <item>2</item>
+        <item>2791</item>
+        <item>287</item>
+        <item>3003</item>
+        <item>3044</item>
+        <item>317</item>
+        <item>319</item>
+        <item>340</item>
+        <item>358</item>
+        <item>378</item>
+        <item>402</item>
+        <item>4122</item>
+        <item>4253</item>
+        <item>5030</item>
+        <item>514</item>
+        <item>525</item>
+        <item>527</item>
+        <item>5484</item>
+        <item>6300</item>
+        <item>639</item>
+        <item>642</item>
+        <item>694</item>
+        <item>7027</item>
+        <item>7081</item>
+        <item>81</item>
     </string-array>
-
 </resources>
