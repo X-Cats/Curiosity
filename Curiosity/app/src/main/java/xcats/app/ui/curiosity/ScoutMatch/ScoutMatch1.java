@@ -8,6 +8,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.JsonReader;
@@ -188,12 +189,14 @@ public class ScoutMatch1 extends AppCompatActivity{
         RadioButton radioButton5 =  findViewById(R.id.radioButton5);
         RadioButton radioButton6 =  findViewById(R.id.radioButton6);
 
-        radioButton.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
-        radioButton2.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
-        radioButton3.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
-        radioButton4.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
-        radioButton5.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
-        radioButton6.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            radioButton.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+            radioButton2.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+            radioButton3.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+            radioButton4.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+            radioButton5.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+            radioButton6.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.graey)));
+        }
     }
 
     public void scoutMatch1Click(View view){

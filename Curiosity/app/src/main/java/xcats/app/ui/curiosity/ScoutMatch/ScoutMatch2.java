@@ -8,6 +8,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -64,26 +65,30 @@ public class ScoutMatch2 extends AppCompatActivity{
         RadioButton radioButton14 =  findViewById(R.id.autoPowerCubeSwitchRadioButton);
 
         if (color.equals("Red")){
-            radioButton7.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton8.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton9.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton10.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton11.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton12.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton13.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton14.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                radioButton7.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
 
+                radioButton8.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+                radioButton9.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+                radioButton10.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+                radioButton11.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+                radioButton12.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+                radioButton13.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+                radioButton14.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
+            }
         }
         else
         {
-            radioButton7.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton8.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton9.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton10.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton11.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton12.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton13.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton14.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                radioButton7.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+                radioButton8.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+                radioButton9.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+                radioButton10.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+                radioButton11.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+                radioButton12.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+                radioButton13.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+                radioButton14.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
+            }
         }
     }
 

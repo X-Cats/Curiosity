@@ -214,7 +214,12 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
 
-        return new String[]{eventList.get(eventPosition), String.valueOf(eventPosition)};
+        if(!eventList.equals(null))
+            return new String[]{eventList.get(eventPosition), String.valueOf(eventPosition)};
+        else {
+            String[] teamNumList = getResources().getStringArray(R.array.testTeamList);
+            return teamNumList;
+        }
     }
 
     private List<String> parseResponse(InputStream response) throws IOException {
