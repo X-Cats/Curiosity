@@ -126,13 +126,35 @@ public class ScoutMatch2 extends AppCompatActivity{
         String autoPowerCube = powerCubeInfo(checkedPowerCube);
         String autoPowerCubeLocation = powerCubeLocation(checkedPowerCubeLocation);
 
+        String autoCubesSwitch ="0";
+        String autoCubesSwitchFail = "0";
+        String autoCubesScale = "0";
+        String autoCubesScaleFail = "0";
+
+        if (autoPowerCubeLocation.equals("Switch") && autoBaseline.equals("Success")) {
+            autoCubesSwitch = "1";
+        } else if (autoPowerCubeLocation.equals("Switch") && autoBaseline.equals("Failure")) {
+            autoCubesSwitchFail = "1";
+        }
+
+        if (autoPowerCubeLocation.equals("Scale") && autoBaseline.equals("Success")) {
+            autoCubesScale= "1";
+        } else if (autoPowerCubeLocation.equals("Scale") && autoBaseline.equals("Failure")) {
+            autoCubesScaleFail = "1";
+        }
+
         editor.putString("redSwitchPos", redSwitchPos);
         editor.putString("scalePos", scalePos);
         editor.putString("blueSwitchPos", blueSwitchPos);
 
-        editor.putString("autoBaseline",autoBaseline);
+        editor.putString("autoCubesSwitch", autoCubesSwitch);
+        editor.putString("autoCubesSwitchFail", autoCubesSwitchFail);
+        editor.putString("autoCubesScale", autoCubesScale);
+        editor.putString("autoCubesScaleFail", autoCubesScaleFail);
+
+        /*editor.putString("autoBaseline",autoBaseline);
         editor.putString("autoPowerCube", autoPowerCube);
-        editor.putString("autoPowerCubeLocation", autoPowerCubeLocation);
+        editor.putString("autoPowerCubeLocation", autoPowerCubeLocation);*/
 
         editor.commit();
 

@@ -1,14 +1,16 @@
 package xcats.app.ui.curiosity.ScoutMatch;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import xcats.app.ui.curiosity.R;
 
@@ -21,6 +23,7 @@ public class ScoutMatch4 extends AppCompatActivity
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     String color;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,39 +31,40 @@ public class ScoutMatch4 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scout4);
 
-        Intent i = getIntent();
-        String teamNum = i.getStringExtra(ScoutMatch1.EXTRA_MESSAGE);
-        color = i.getStringExtra("color");
-        Log.d("Curiosity", ""+ teamNum);
+        sharedPreferences = this.getSharedPreferences(
+                getString(R.string.app_name), Context.MODE_PRIVATE);
 
-        TextView teamNumView = findViewById(R.id.textView27);
+        String teamNum = sharedPreferences.getString("teamNumber","0");
+        color = sharedPreferences.getString("allianceColor","Red");
+        Log.d("Curiosity", ""+ teamNum + color);
+
+        TextView teamNumView = findViewById(R.id.teamNumScout4);
         teamNumView.setText(teamNum);
 
-        RadioButton radioButton15= findViewById(R.id.radioButton15);
-        RadioButton radioButton16= findViewById(R.id.radioButton16);
-        RadioButton radioButton17= findViewById(R.id.radioButton17);
-        //RadioButton radioButton18= findViewById(R.id.radioButton18);
-        RadioButton radioButton19= findViewById(R.id.radioButton19);
-        RadioButton radioButton20 =  findViewById(R.id.radioButton20);
-        RadioButton radioButton21 =  findViewById(R.id.radioButton21);
-        RadioButton radioButton22 =  findViewById(R.id.radioButton22);
-        RadioButton radioButton23 =  findViewById(R.id.radioButton23);
-        RadioButton radioButton24 =  findViewById(R.id.radioButton24);
-        RadioButton radioButton25 =  findViewById(R.id.radioButton25);
+        styleRadioButtons();
+
+    }
+
+    private void styleRadioButtons() {
+        RadioButton radioButton15= findViewById(R.id.climbRadioButton1);
+        RadioButton radioButton16= findViewById(R.id.climbRadioButton2);
+        RadioButton radioButton17= findViewById(R.id.climbRadioButton3);
+        RadioButton radioButton19= findViewById(R.id.climbRadioButton4);
+        RadioButton radioButton20 =  findViewById(R.id.climbRadioButton5);
+        RadioButton radioButton21 =  findViewById(R.id.climbRadioButton6);
+        RadioButton radioButton22 =  findViewById(R.id.climbRadioButton7);
+        RadioButton radioButton23 =  findViewById(R.id.climbRadioButton8);
 
 
         if (color.equals("Red")){
             radioButton15.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
             radioButton16.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
             radioButton17.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            //radioButton18.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
             radioButton19.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
             radioButton20.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
             radioButton21.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
             radioButton22.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
             radioButton23.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton24.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
-            radioButton25.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.red)));
 
         }
         else
@@ -68,14 +72,11 @@ public class ScoutMatch4 extends AppCompatActivity
             radioButton15.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
             radioButton16.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
             radioButton17.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            //radioButton18.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
             radioButton19.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
             radioButton20.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
             radioButton21.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
             radioButton22.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
             radioButton23.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton24.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
-            radioButton25.setButtonTintList(ColorStateList.valueOf(this.getColor(R.color.blue)));
 
         }
     }
@@ -83,13 +84,39 @@ public class ScoutMatch4 extends AppCompatActivity
     public void scoutMatch4Click(View view){
         Intent intent = new Intent(this, ScoutMatch5.class);
 
-        TextView teamNumView = findViewById(R.id.textView27);
+        TextView teamNumView = findViewById(R.id.teamNumScout4);
         String teamNum = String.valueOf(teamNumView.getText());
 
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        intent.putExtra("color", color);
+        RadioGroup climbRadioGroup = findViewById(R.id.climbRadioGroup);
 
-        intent.putExtra(EXTRA_MESSAGE, teamNum);
+        String climb = "No";
+        String climbAssist = "No";
+
+        switch (climbRadioGroup.getCheckedRadioButtonId()) {
+            case R.id.climbRadioButton1:
+            case R.id.climbRadioButton2:
+                break;
+            case R.id.climbRadioButton3:
+            case R.id.climbRadioButton4:
+            case R.id.climbRadioButton5:
+                climb = "Yes";
+                break;
+            case R.id.climbRadioButton6:
+                break;
+            case R.id.climbRadioButton7:
+            case R.id.climbRadioButton8:
+                climbAssist = "Yes";
+                break;
+            default:
+                break;
+        }
+
+        editor.putString("climb", climb);
+        editor.putString("climbAssist", climbAssist);
+
+        editor.commit();
 
         startActivity(intent);
 

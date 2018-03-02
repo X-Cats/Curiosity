@@ -1,6 +1,8 @@
 package xcats.app.ui.curiosity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +18,8 @@ import xcats.app.ui.curiosity.ScoutMatch.ScoutMatch1;
 
 public class EventLandingActivity extends AppCompatActivity {
 
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -25,12 +29,14 @@ public class EventLandingActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
 
-        Intent i = getIntent();
-        String s = i.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        sharedPreferences = this.getSharedPreferences(
+                getString(R.string.app_name), Context.MODE_PRIVATE);
 
-        if(s != null){
-            Log.d("Curiosity", s);
-            getSupportActionBar().setTitle(s);
+        String eventName = sharedPreferences.getString("selectedEvent","Curiosity");
+
+        if(eventName!= null){
+            Log.d("Curiosity", eventName);
+            getSupportActionBar().setTitle(eventName);
         }
     }
 
@@ -41,7 +47,6 @@ public class EventLandingActivity extends AppCompatActivity {
     }
 
     public void analyzeMatchClick(View view){
-
         Intent intent = new Intent(this, Analyze1.class);
         startActivity(intent);
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,208 +7,98 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView17"
-        android:layout_width="194dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Comments"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-    <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Endgame Team"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignBaseline="@+id/teamNumScout4"
+        android:layout_alignBottom="@+id/teamNumScout4"
+        android:layout_marginEnd="32dp"
+        android:layout_toStartOf="@+id/teamNumScout4"
+        android:text="Climb | Team:"
+        android:textSize="24sp"/>
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/teamNumScout4"
         android:layout_width="53dp"
         android:layout_height="29dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="36dp"
+        android:layout_alignEnd="@+id/button21"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="66dp"
         android:layout_marginTop="16dp"
         android:text="#"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
-        app:layout_constraintStart_toEndOf="@+id/textView26"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="24sp" />
 
     <RadioGroup
-        android:id="@+id/robotPosRadioGroup"
-        android:layout_width="315dp"
-        android:layout_height="190dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186">
-
-        <LinearLayout
-            android:layout_width="149dp"
-            android:layout_height="174dp"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/radioButton15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Climb Solo"
-                tools:layout_editor_absoluteX="56dp"
-                tools:layout_editor_absoluteY="58dp" />
-
-            <RadioButton
-                android:id="@+id/radioButton16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Climb Assisted"
-                tools:layout_editor_absoluteX="100dp"
-                tools:layout_editor_absoluteY="101dp" />
-
-            <RadioButton
-                android:id="@+id/radioButton17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Climb Attempt"
-                tools:layout_editor_absoluteX="56dp"
-                tools:layout_editor_absoluteY="147dp" />
-
-            <RadioButton
-                android:id="@+id/radioButton19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No Climbing"
-                tools:layout_editor_absoluteX="56dp"
-                tools:layout_editor_absoluteY="195dp" />
-
-            <RadioButton
-                android:id="@+id/radioButton24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Climb &amp; Assist 1 "
-                tools:layout_editor_absoluteX="56dp"
-                tools:layout_editor_absoluteY="239dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="173dp"
-            android:orientation="vertical">
-
-
-            <RadioButton
-                android:id="@+id/radioButton20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Assist 1 robot"
-                tools:layout_editor_absoluteX="216dp"
-                tools:layout_editor_absoluteY="58dp" />
-
-            <RadioButton
-                android:id="@+id/radioButton21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Assist 2 Robots"
-                tools:layout_editor_absoluteX="216dp"
-                tools:layout_editor_absoluteY="101dp" />
-
-            <RadioButton
-                android:id="@+id/radioButton22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Attempt Assisted"
-                tools:layout_editor_absoluteX="216dp"
-                tools:layout_editor_absoluteY="147dp" />
-
-            <RadioButton
-                android:id="@+id/radioButton23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No Assist"
-                tools:layout_editor_absoluteX="216dp"
-                tools:layout_editor_absoluteY="195dp" />
-
-
-            <RadioButton
-                android:id="@+id/radioButton25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Climb &amp; Assist 2"
-                tools:layout_editor_absoluteX="211dp"
-                tools:layout_editor_absoluteY="239dp" />
-
-        </LinearLayout>
-
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/button20"
+        android:id="@+id/climbRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="16dp"
-        android:text="Back"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_below="@id/textView26"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_centerHorizontal="true"
+        android:checkedButton="@id/climbRadioButton1">
+
+        <RadioButton
+            android:id="@+id/climbRadioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Did Not Attempt to Climb or Assist"/>
+
+        <RadioButton
+            android:id="@+id/climbRadioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Failed to Climb"/>
+
+        <RadioButton
+            android:id="@+id/climbRadioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Climbed Solo Successfully"/>
+
+        <RadioButton
+            android:id="@+id/climbRadioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Climbed via Levitate"/>
+
+        <RadioButton
+            android:id="@+id/climbRadioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Climbed via Teammate"/>
+
+        <RadioButton
+            android:id="@+id/climbRadioButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Failed to Assist Teammate"/>
+
+        <RadioButton
+            android:id="@+id/climbRadioButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assisted 1 Teammate to Climb"/>
+
+        <RadioButton
+            android:id="@+id/climbRadioButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assisted 2 Teammates to Climb"/>
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/button21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Next"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="18dp"
         android:onClick="scoutMatch4Click"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="304dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:text="     If a robot assists others or was assisted, please explain in detail here:"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/robotPosRadioGroup" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="348dp"
-        android:layout_height="122dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
-        app:layout_constraintVertical_bias="0.0" />
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
