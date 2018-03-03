@@ -225,5 +225,16 @@
         android:background="@color/blue"
         android:onClick="colorChange"/>
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="14dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="scoutMatch2Click"
+        android:text="Next"/>
+
 
 </RelativeLayout>
