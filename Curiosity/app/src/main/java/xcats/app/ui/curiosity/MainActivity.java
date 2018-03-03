@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
             return new String[]{eventList.get(eventPosition), String.valueOf(eventPosition)};
         else {
             eventCode = new ArrayList<>();
-            eventCode.add("2018nyuti");
+            eventCode.add("nyut");
             String[] teamNumList = getResources().getStringArray(R.array.testEventList);
             return new String[]{teamNumList[0],String.valueOf(0)};
         }
