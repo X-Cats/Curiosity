@@ -96,6 +96,8 @@ public class ScoutMatch5 extends AppCompatActivity
         cumulativeString += (sharedPrefValues.get("driverPos").toString()) + ",";
         cumulativeString += (sharedPrefValues.get("robotPos").toString()) + ",";
 
+        cumulativeString += (sharedPrefValues.get("autoBaseline").toString()) + ",";
+
         cumulativeString += (sharedPrefValues.get("autoCubesSwitch").toString()) + ",";
         cumulativeString += (sharedPrefValues.get("autoCubesSwitchFail").toString()) + ",";
         cumulativeString += (sharedPrefValues.get("autoCubesScale").toString()) + ",";

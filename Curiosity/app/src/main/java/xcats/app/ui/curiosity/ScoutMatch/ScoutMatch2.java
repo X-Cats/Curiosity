@@ -153,6 +153,8 @@ public class ScoutMatch2 extends AppCompatActivity{
         editor.putString("scalePos", scalePos);
         editor.putString("blueSwitchPos", blueSwitchPos);
 
+        editor.putString("autoBaseline", autoBaseline);
+
         editor.putString("autoCubesSwitch", autoCubesSwitch);
         editor.putString("autoCubesSwitchFail", autoCubesSwitchFail);
         editor.putString("autoCubesScale", autoCubesScale);
