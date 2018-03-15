@@ -171,6 +171,8 @@ public class MainActivity extends AppCompatActivity {
             return;
 
 
+
+
         Log.d("LoginClick","Selected Event:" + eventSelected[0] + " Code: "+ eventCode.get(Integer.parseInt(eventSelected[1])));
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -214,11 +216,13 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
 
-        if(!eventList.equals(null))
+        if(eventList != null)
             return new String[]{eventList.get(eventPosition), String.valueOf(eventPosition)};
         else {
-            String[] teamNumList = getResources().getStringArray(R.array.testTeamList);
-            return teamNumList;
+            eventCode = new ArrayList<>();
+            eventCode.add("nyut");
+            String[] teamNumList = getResources().getStringArray(R.array.testEventList);
+            return new String[]{teamNumList[0],String.valueOf(0)};
         }
     }
 

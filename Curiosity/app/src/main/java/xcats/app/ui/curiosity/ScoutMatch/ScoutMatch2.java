@@ -19,7 +19,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import xcats.app.ui.curiosity.R;
 
@@ -39,7 +38,7 @@ public class ScoutMatch2 extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scout2);
+        setContentView(R.layout.activity_scout2_relative);
 
         sharedPreferences = this.getSharedPreferences(
                 getString(R.string.app_name), Context.MODE_PRIVATE);
@@ -48,13 +47,14 @@ public class ScoutMatch2 extends AppCompatActivity{
         color = sharedPreferences.getString("allianceColor","Red");
         Log.d("Curiosity", ""+ teamNum + color);
 
-        TextView teamNumView = findViewById(R.id.textView10);
+        TextView teamNumView = findViewById(R.id.scout2TeamNum);
         teamNumView.setText(teamNum);
 
         styleRadioButtons();
     }
 
     private void styleRadioButtons() {
+
         RadioButton radioButton7= findViewById(R.id.autoBaselineSuccessRadioButton);
         RadioButton radioButton8= findViewById(R.id.autoBaselineNoAttRadioButton);
         RadioButton radioButton9= findViewById(R.id.autoBaselineFailedRadioButton);
@@ -93,6 +93,7 @@ public class ScoutMatch2 extends AppCompatActivity{
     }
 
     public void scoutMatch2Click(View view){
+
         Intent intent = new Intent(this, ScoutMatch3.class);
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -151,6 +152,8 @@ public class ScoutMatch2 extends AppCompatActivity{
         editor.putString("redSwitchPos", redSwitchPos);
         editor.putString("scalePos", scalePos);
         editor.putString("blueSwitchPos", blueSwitchPos);
+
+        editor.putString("autoBaseline", autoBaseline);
 
         editor.putString("autoCubesSwitch", autoCubesSwitch);
         editor.putString("autoCubesSwitchFail", autoCubesSwitchFail);

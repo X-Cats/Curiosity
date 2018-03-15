@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/scout2AutoHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/scout2TeamNum"
+        android:layout_alignBottom="@+id/scout2TeamNum"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="56dp"
+        android:text="Auto | Team:"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/scout2TeamNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="18dp"
+        android:layout_toEndOf="@+id/scout2AutoHeader"
+        android:text="#"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/autoBaselineHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/scout2AutoHeader"
+        android:layout_centerHorizontal="true"
+        android:text="Cross Baseline"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:id="@+id/autoBaselineRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_below="@id/autoBaselineHeader"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/autoBaselineSuccessRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Success"/>
+
+        <RadioButton
+            android:id="@+id/autoBaselineNoAttRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="No Attempt"/>
+
+        <RadioButton
+            android:id="@+id/autoBaselineFailedRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Failed Attempt"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/autoPowerCubeHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/autoBaselineRadioGroup"
+        android:layout_centerHorizontal="true"
+        android:text="Place Powercube"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:id="@+id/autoPowerCubeRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_below="@id/autoPowerCubeHeader"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/autoPowerCubeSuccessRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Success"/>
+
+        <RadioButton
+            android:id="@+id/autoPowerCubeNoAttRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="No Attempt"/>
+
+        <RadioButton
+            android:id="@+id/autoPowerCubeFailedRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Failed Attempt"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/autoPowerCubeLocationRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_below="@id/autoPowerCubeRadioGroup"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/autoPowerCubeScaleRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Scale"/>
+
+        <RadioButton
+            android:id="@+id/autoPowerCubeSwitchRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Switch"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/redSwitchHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_below="@+id/autoPowerCubeLocationRadioGroup"
+        android:layout_toStartOf="@+id/autoPowerCubeHeader"
+        android:text="Red Switch"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/scaleHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/redSwitchHeader"
+        android:layout_alignBottom="@+id/redSwitchHeader"
+        android:layout_centerHorizontal="true"
+        android:text="Scale"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/blueSwitchHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/scaleHeader"
+        android:layout_alignBottom="@+id/scaleHeader"
+        android:layout_toEndOf="@+id/autoPowerCubeLocationRadioGroup"
+        android:text="Blue Switch"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/buttonBlueSwitchTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonScaleTop"
+        android:layout_alignBottom="@+id/buttonScaleTop"
+        android:layout_toEndOf="@+id/autoPowerCubeHeader"
+        android:background="@color/red"
+        android:onClick="colorChange"/>
+
+    <Button
+        android:id="@+id/buttonScaleBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonRedSwitchBottom"
+        android:layout_alignBottom="@+id/buttonRedSwitchBottom"
+        android:layout_centerHorizontal="true"
+        android:background="@color/blue"
+        android:onClick="colorChange"/>
+
+    <Button
+        android:id="@+id/buttonScaleTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonRedSwitchTop"
+        android:layout_alignBottom="@+id/buttonRedSwitchTop"
+        android:layout_centerHorizontal="true"
+        android:background="@color/red"
+        android:onClick="colorChange"/>
+
+    <Button
+        android:id="@+id/buttonBlueSwitchBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonScaleBottom"
+        android:layout_alignBottom="@+id/buttonScaleBottom"
+        android:layout_alignEnd="@+id/autoPowerCubeRadioGroup"
+        android:background="@color/blue"
+        android:onClick="colorChange"/>
+
+    <Button
+        android:id="@+id/buttonRedSwitchTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_alignStart="@+id/autoPowerCubeRadioGroup"
+        android:layout_below="@+id/redSwitchHeader"
+        android:background="@color/red"
+        android:onClick="colorChange"/>
+
+    <Button
+        android:id="@+id/buttonRedSwitchBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_alignStart="@+id/buttonRedSwitchTop"
+        android:layout_below="@+id/buttonRedSwitchTop"
+        android:background="@color/blue"
+        android:onClick="colorChange"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="14dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="scoutMatch2Click"
+        android:text="Next"/>
+
+
+</RelativeLayout>

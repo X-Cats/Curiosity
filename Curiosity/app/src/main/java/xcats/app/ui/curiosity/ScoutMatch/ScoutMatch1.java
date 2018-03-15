@@ -255,7 +255,7 @@ public class ScoutMatch1 extends AppCompatActivity{
         Spinner teamNumSpinner= (Spinner) findViewById(R.id.teamListSpinner);
 
         //Gets the team using appropriate position based on the appropriate team num list
-        if(!teamList.isEmpty() && !teamList.equals(null)){
+        if(teamList != null){
             return teamList.get(teamNumSpinner.getSelectedItemPosition());
         }
         else{
