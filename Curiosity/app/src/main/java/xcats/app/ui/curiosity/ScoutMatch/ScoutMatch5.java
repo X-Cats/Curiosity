@@ -73,9 +73,9 @@ public class ScoutMatch5 extends AppCompatActivity
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 43);
 
         File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsoluteFile();
-        File file = new File("/mnt/sdcard/", fileName);
+        File file = new File("/mnt/sdcard/", "CuriosityLog.txt");
 
-        try (FileOutputStream stream = new FileOutputStream(file)) {
+        try (FileOutputStream stream = new FileOutputStream(file, true)) {
             stream.write(dataToWrite.getBytes());
         } catch (IOException e) {
             Log.e("Exception", "File write failed: " + e.toString());
@@ -111,8 +111,8 @@ public class ScoutMatch5 extends AppCompatActivity
         cumulativeString += (sharedPrefValues.get("cubesOppSwitchFail").toString()) + ",";
         cumulativeString += (sharedPrefValues.get("cubesExchanged").toString()) + ",";
         cumulativeString += (sharedPrefValues.get("climb").toString()) + ",";
-        cumulativeString += (sharedPrefValues.get("climbAssist").toString()) + ",";
+        cumulativeString += (sharedPrefValues.get("climbAssist").toString()) ;
 
-        return cumulativeString;
+        return cumulativeString + "\n";
     }
 }
