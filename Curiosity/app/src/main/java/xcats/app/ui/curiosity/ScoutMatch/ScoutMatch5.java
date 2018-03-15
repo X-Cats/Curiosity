@@ -58,6 +58,7 @@ public class ScoutMatch5 extends AppCompatActivity
 
         ToggleButton malfunction = findViewById(R.id.malfunctionToggleButton);
         editor.putBoolean("malfunction", malfunction.isChecked());
+        editor.commit();
 
         writeToFile(getApplicationContext());
 

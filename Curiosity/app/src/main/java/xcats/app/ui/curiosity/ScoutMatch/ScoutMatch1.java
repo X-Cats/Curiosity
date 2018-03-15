@@ -76,6 +76,30 @@ public class ScoutMatch1 extends AppCompatActivity{
             updateTeamSpinner();
         }
 
+        String allianceColor = sharedPreferences.getString("allianceColor","Red");
+        if (allianceColor.equals("Blue")) {
+            ToggleButton allColor = findViewById(R.id.toggleButton3);
+            allColor.setChecked(true);
+        }
+
+        String driverPos = sharedPreferences.getString("driverPos", "");
+
+        switch (driverPos){
+            case "RIGHT":
+                RadioButton rightDriverPos = findViewById(R.id.radioButton3);
+                rightDriverPos.setChecked(true);
+                break;
+            case "LEFT":
+                RadioButton leftDriverPos = findViewById(R.id.radioButton);
+                leftDriverPos.setChecked(true);
+                break;
+            case "CENTER":
+                RadioButton centerDriverPos = findViewById(R.id.radioButton2);
+                centerDriverPos.setChecked(true);
+                break;
+            default:
+                break;
+        }
     }
 
     private void blueAllianceTeamRetrieval() {
