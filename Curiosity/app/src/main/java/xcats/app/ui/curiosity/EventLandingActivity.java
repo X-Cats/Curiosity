@@ -46,6 +46,11 @@ public class EventLandingActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void logOutClick(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
     public void analyzeMatchClick(View view){
         Intent intent = new Intent(this, Analyze1.class);
         startActivity(intent);

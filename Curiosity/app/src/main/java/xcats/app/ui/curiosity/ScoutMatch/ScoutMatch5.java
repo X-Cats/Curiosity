@@ -64,15 +64,14 @@ public class ScoutMatch5 extends AppCompatActivity
 
         String dataToWrite = getComposedStringFromSharedPrefs();
 
-        Calendar c = Calendar.getInstance();
+        /*Calendar c = Calendar.getInstance();
         SimpleDateFormat dateformat = new SimpleDateFormat("hh:mm:ss aa");
         String time = dateformat.format(c.getTime());
 
-        String fileName  = "scoutingApp" + sharedPreferences.getString("userName","unknown") + time + ".txt";
+        String fileName  = "scoutingApp" + sharedPreferences.getString("userName","unknown") + time + ".txt";*/
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 43);
 
-        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsoluteFile();
         File file = new File("/mnt/sdcard/", "CuriosityLog.txt");
 
         try (FileOutputStream stream = new FileOutputStream(file, true)) {

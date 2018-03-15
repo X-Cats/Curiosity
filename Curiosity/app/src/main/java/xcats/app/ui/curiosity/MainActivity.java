@@ -265,4 +265,13 @@ public class MainActivity extends AppCompatActivity {
         reader.endObject();
         return eventName + ":!:" + eventCode;
     }
+
+    @Override
+    public void onBackPressed() {
+        if (true) {
+
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
