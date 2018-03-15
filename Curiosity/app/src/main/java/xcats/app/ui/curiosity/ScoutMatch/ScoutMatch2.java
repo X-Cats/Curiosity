@@ -137,15 +137,15 @@ public class ScoutMatch2 extends AppCompatActivity{
         String autoCubesScale = "0";
         String autoCubesScaleFail = "0";
 
-        if (autoPowerCubeLocation.equals("Switch") && autoBaseline.equals("Success")) {
+        if (autoPowerCubeLocation.equals("Switch") && autoPowerCube.equals("Success")) {
             autoCubesSwitch = "1";
-        } else if (autoPowerCubeLocation.equals("Switch") && autoBaseline.equals("Failure")) {
+        } else if (autoPowerCubeLocation.equals("Switch") && autoPowerCube.equals("Failure")) {
             autoCubesSwitchFail = "1";
         }
 
-        if (autoPowerCubeLocation.equals("Scale") && autoBaseline.equals("Success")) {
+        if (autoPowerCubeLocation.equals("Scale") && autoPowerCube.equals("Success")) {
             autoCubesScale= "1";
-        } else if (autoPowerCubeLocation.equals("Scale") && autoBaseline.equals("Failure")) {
+        } else if (autoPowerCubeLocation.equals("Scale") && autoPowerCube.equals("Failure")) {
             autoCubesScaleFail = "1";
         }
 

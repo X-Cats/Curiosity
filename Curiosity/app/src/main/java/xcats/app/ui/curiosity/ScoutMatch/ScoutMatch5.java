@@ -13,6 +13,7 @@ import android.util.TimeUtils;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.ToggleButton;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -52,6 +53,11 @@ public class ScoutMatch5 extends AppCompatActivity
 
 
     public void scoutMatch5Click(View view){
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        ToggleButton malfunction = findViewById(R.id.malfunctionToggleButton);
+        editor.putBoolean("malfunction", malfunction.isChecked());
 
         writeToFile(getApplicationContext());
 
@@ -110,7 +116,9 @@ public class ScoutMatch5 extends AppCompatActivity
         cumulativeString += (sharedPrefValues.get("cubesOppSwitchFail").toString()) + ",";
         cumulativeString += (sharedPrefValues.get("cubesExchanged").toString()) + ",";
         cumulativeString += (sharedPrefValues.get("climb").toString()) + ",";
-        cumulativeString += (sharedPrefValues.get("climbAssist").toString()) ;
+        cumulativeString += (sharedPrefValues.get("climbAssist").toString()) + ",";
+
+        cumulativeString += (sharedPrefValues.get("malfunction").toString());
 
         return cumulativeString + "\n";
     }

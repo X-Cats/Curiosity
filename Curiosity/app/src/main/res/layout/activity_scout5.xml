@@ -61,11 +61,31 @@
         android:text="Did They Win?"
         android:textSize="30sp" />
 
+    <ToggleButton
+        android:id="@+id/malfunctionToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView31"
+        android:layout_below="@+id/toggleButton"
+        android:layout_marginTop="66dp"
+        android:textOn="Yes :("
+        android:textOff="No :)"/>
+
+    <TextView
+        android:id="@+id/malfunctionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/malfunctionToggleButton"
+        android:layout_alignBottom="@id/malfunctionToggleButton"
+        android:layout_marginEnd="33dp"
+        android:text="Malfunction?"
+        android:textSize="30sp" />
+
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toggleButton"
+        android:layout_below="@+id/malfunctionToggleButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
         android:ems="10"
