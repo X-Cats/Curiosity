@@ -103,7 +103,7 @@
         android:layout_marginTop="15dp"
         android:layout_below="@+id/autoSwitchCounter"
         android:layout_centerHorizontal="true"
-        android:text="Switch Placements"
+        android:text="Scale Placements"
         android:textSize="14sp"/>
 
     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton

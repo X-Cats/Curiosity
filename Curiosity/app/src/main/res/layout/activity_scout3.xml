@@ -100,10 +100,10 @@
         android:id="@+id/ownSwitchSuccessText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ownSwitchFailureCounter"
+        android:layout_above="@+id/scaleSuccessCounter"
         android:layout_alignEnd="@+id/teleopTitleTextView"
         android:text="Own Switch: Success"
-        android:textSize="20sp" />
+        android:textSize="20sp"/>
 
     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
         android:id="@+id/ownSwitchSuccessCounter"
@@ -115,30 +115,12 @@
         android:layout_marginTop="12dp" />
 
     <TextView
-        android:id="@+id/ownSwitchFailureText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ownSwitchFailureCounter"
-        android:layout_alignEnd="@+id/ownSwitchSuccessText"
-        android:layout_alignStart="@+id/ownSwitchSuccessText"
-        android:text="Own Switch: Fail"
-        android:textSize="20sp" />
-
-    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-        android:id="@+id/ownSwitchFailureCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_alignStart="@+id/ownSwitchSuccessCounter"
-        android:layout_below="@+id/ownSwitchSuccessCounter"
-        android:layout_marginTop="18dp" />
-
-    <TextView
         android:id="@+id/scaleSuccessText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/scaleSuccessCounter"
         android:layout_alignEnd="@+id/ownSwitchSuccessText"
-        android:layout_alignStart="@+id/ownSwitchFailureText"
+        android:layout_alignStart="@+id/ownSwitchSuccessText"
         android:textSize="20sp"
         android:text="Scale: Success"/>
 
@@ -146,26 +128,8 @@
         android:id="@+id/scaleSuccessCounter"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_alignStart="@+id/ownSwitchFailureCounter"
-        android:layout_below="@+id/ownSwitchFailureCounter"
-        android:layout_marginTop="18dp" />
-
-    <TextView
-        android:id="@+id/scaleFailureText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/scaleFailureCounter"
-        android:layout_alignEnd="@+id/scaleSuccessText"
-        android:layout_alignStart="@+id/ownSwitchFailureText"
-        android:text="Scale: Fail"
-        android:textSize="20sp" />
-
-    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-        android:id="@+id/scaleFailureCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_alignStart="@+id/scaleSuccessCounter"
-        android:layout_below="@+id/scaleSuccessCounter"
+        android:layout_alignStart="@+id/ownSwitchSuccessCounter"
+        android:layout_below="@+id/ownSwitchSuccessCounter"
         android:layout_marginTop="18dp" />
 
     <TextView
@@ -174,7 +138,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/oppSwitchSuccessCounter"
         android:layout_alignEnd="@+id/ownSwitchSuccessText"
-        android:layout_alignStart="@+id/ownSwitchFailureText"
+        android:layout_alignStart="@+id/ownSwitchSuccessText"
         android:text="Opp Switch: Success"
         android:textSize="20sp" />
 
@@ -182,26 +146,8 @@
         android:id="@+id/oppSwitchSuccessCounter"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_alignStart="@+id/scaleFailureCounter"
-        android:layout_below="@+id/scaleFailureCounter"
-        android:layout_marginTop="18dp" />
-
-    <TextView
-        android:id="@+id/oppSwitchFailureText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/oppSwitchFailureCounter"
-        android:layout_alignEnd="@+id/scaleSuccessText"
-        android:layout_alignStart="@+id/ownSwitchFailureText"
-        android:text="Own Switch: Fail"
-        android:textSize="20sp" />
-
-    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-        android:id="@+id/oppSwitchFailureCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
         android:layout_alignStart="@+id/scaleSuccessCounter"
-        android:layout_below="@+id/oppSwitchSuccessCounter"
+        android:layout_below="@+id/scaleSuccessCounter"
         android:layout_marginTop="18dp" />
 
     <View
@@ -209,7 +155,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/oppSwitchFailureText"
+        android:layout_below="@+id/oppSwitchSuccessCounter"
         android:layout_marginTop="9dp"
         android:background="@color/graey" />
 
@@ -217,7 +163,7 @@
         android:id="@+id/exchangeHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/oppSwitchFailureText"
+        android:layout_alignStart="@+id/acquisitionHeader"
         android:layout_below="@+id/view3"
         android:layout_marginTop="10dp"
         android:text="PowerCubes Exchanged"
@@ -227,15 +173,15 @@
         android:id="@+id/cubesExchangedCounter"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_below="@+id/exchangeHeader"
-        android:layout_marginTop="16dp"
-        android:layout_toStartOf="@+id/acquireExchangeCounter" />
+        android:layout_marginTop="357dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/button18"
         android:layout_width="80dp"
         android:layout_height="46dp"
-        android:layout_alignEnd="@+id/oppSwitchFailureCounter"
+        android:layout_alignEnd="@+id/oppSwitchSuccessCounter"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"

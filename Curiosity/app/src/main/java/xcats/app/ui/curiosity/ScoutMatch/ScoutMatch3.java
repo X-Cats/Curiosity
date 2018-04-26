@@ -56,21 +56,21 @@ public class ScoutMatch3 extends AppCompatActivity
         ElegantNumberButton acquireGroundButton = findViewById(R.id.acquireGroundButton);
         ElegantNumberButton acquireExchangeButton = findViewById(R.id.acquireExchangeButton);
         ElegantNumberButton ownSwitchCounter = findViewById(R.id.ownSwitchSuccessCounter);
-        ElegantNumberButton ownSwitchFailureCounter = findViewById(R.id.ownSwitchFailureCounter);
+        //ElegantNumberButton ownSwitchFailureCounter = findViewById(R.id.ownSwitchFailureCounter);
         ElegantNumberButton scaleCounter = findViewById(R.id.scaleSuccessCounter);
-        ElegantNumberButton scaleFailureCounter = findViewById(R.id.scaleFailureCounter);
+        //ElegantNumberButton scaleFailureCounter = findViewById(R.id.scaleFailureCounter);
         ElegantNumberButton oppSwitchCounter = findViewById(R.id.oppSwitchSuccessCounter);
-        ElegantNumberButton oppSwitchFailureCounter = findViewById(R.id.oppSwitchFailureCounter);
+        //ElegantNumberButton oppSwitchFailureCounter = findViewById(R.id.oppSwitchFailureCounter);
         ElegantNumberButton exchangedCounter = findViewById(R.id.cubesExchangedCounter);
 
         editor.putInt("cubesAcquiredGround", Integer.parseInt(acquireGroundButton.getNumber()));
         editor.putInt("cubesAcquiredExchange",Integer.parseInt(acquireExchangeButton.getNumber()));
         editor.putInt("cubesOwnSwitch",Integer.parseInt(ownSwitchCounter.getNumber()));
-        editor.putInt("cubesOwnSwitchFail",Integer.parseInt(ownSwitchFailureCounter.getNumber()));
+        editor.putInt("cubesOwnSwitchFail", 0);
         editor.putInt("cubesScale",Integer.parseInt(scaleCounter.getNumber()));
-        editor.putInt("cubesScaleFail",Integer.parseInt(scaleFailureCounter.getNumber()));
+        editor.putInt("cubesScaleFail",0);
         editor.putInt("cubesOppSwitch",Integer.parseInt(oppSwitchCounter.getNumber()));
-        editor.putInt("cubesOppSwitchFail",Integer.parseInt(oppSwitchFailureCounter.getNumber()));
+        editor.putInt("cubesOppSwitchFail",0);
         editor.putInt("cubesExchanged",Integer.parseInt(exchangedCounter.getNumber()));
 
         editor.commit();

@@ -76,10 +76,28 @@ public class ScoutMatch5 extends AppCompatActivity
         String time = dateformat.format(c.getTime());
 
         String fileName  = "scoutingApp" + sharedPreferences.getString("userName","unknown") + time + ".txt";*/
+        Calendar c = Calendar.getInstance();
+        int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+        String dayOfWeekText = "";
+
+        switch (dayOfWeek) {
+            case Calendar.THURSDAY:
+                dayOfWeekText = "Thursday";
+                break;
+            case Calendar.FRIDAY:
+                dayOfWeekText = "Friday";
+                break;
+            case Calendar.SATURDAY:
+                dayOfWeekText = "Sunday";
+                break;
+            default:
+                dayOfWeekText = "Day?";
+        }
+
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 43);
 
-        File file = new File("/mnt/sdcard/", "CuriosityLog.txt");
+        File file = new File("/mnt/sdcard/", dayOfWeekText + "CuriosityLog.txt");
 
         try (FileOutputStream stream = new FileOutputStream(file, true)) {
             stream.write(dataToWrite.getBytes());
