@@ -10,12 +10,12 @@
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView31"
-        android:layout_alignBottom="@+id/textView31"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="113dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="56dp"
+        android:layout_alignParentTop="true"
         android:text="Conclusion | Team:"
-        android:textSize="24sp" />
+        android:textSize="24sp"/>
 
     <TextView
         android:id="@+id/textView31"
@@ -27,6 +27,25 @@
         android:layout_toEndOf="@+id/textView30"
         android:text="#"
         android:textSize="24sp"/>
+
+    <ToggleButton
+        android:id="@+id/malfunctionToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/malfunctionTextView"
+        android:layout_toEndOf="@+id/textView30"
+        android:textOff="No :)"
+        android:textOn="Yes :("/>
+
+    <TextView
+        android:id="@+id/malfunctionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="97dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView30"
+        android:text="Malfunction?"
+        android:textSize="30sp"/>
 
     <Button
         android:id="@+id/button22"
@@ -41,56 +60,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView31"
-        android:layout_below="@+id/textView30"
-        android:layout_marginTop="66dp"
-        android:textOn="Won"
-        android:textOff="Lost"/>
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/toggleButton"
-        android:layout_marginEnd="33dp"
-        android:layout_toStartOf="@+id/toggleButton"
-        android:text="Did They Win?"
-        android:textSize="30sp" />
-
-    <ToggleButton
-        android:id="@+id/malfunctionToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView31"
-        android:layout_below="@+id/toggleButton"
-        android:layout_marginTop="66dp"
-        android:textOn="Yes :("
-        android:textOff="No :)"/>
-
-    <TextView
-        android:id="@+id/malfunctionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/malfunctionToggleButton"
-        android:layout_alignBottom="@id/malfunctionToggleButton"
-        android:layout_marginEnd="33dp"
-        android:text="Malfunction?"
-        android:textSize="30sp" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/malfunctionToggleButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="FINAL SCORE"
-        android:textAlignment="center"/>
 
 </RelativeLayout>
