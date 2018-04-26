@@ -20,6 +20,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import xcats.app.ui.curiosity.R;
 
 /**
@@ -103,51 +104,53 @@ public class ScoutMatch2 extends AppCompatActivity{
         Button blueSwitchBottom = findViewById(R.id.buttonBlueSwitchBottom);
 
         RadioGroup autoBaselineRadioGroup = findViewById(R.id.autoBaselineRadioGroup);
-        RadioGroup autoPowerCubeRadioGroup = findViewById(R.id.autoPowerCubeRadioGroup);
+        //RadioGroup autoPowerCubeRadioGroup = findViewById(R.id.autoPowerCubeRadioGroup);
         int checkedBaseline = autoBaselineRadioGroup.getCheckedRadioButtonId();
-        int checkedPowerCube = autoPowerCubeRadioGroup.getCheckedRadioButtonId();
+        //int checkedPowerCube = autoPowerCubeRadioGroup.getCheckedRadioButtonId();
 
-        if(checkedBaseline == -1
-                || checkedPowerCube == -1 ){
+        if(checkedBaseline == -1){
             Toast.makeText(getApplicationContext(),
                     "Please make sure to select an option for each field!",Toast.LENGTH_SHORT).show();
             return;
         }
 
-        RadioGroup autoPowerCubeLocationRadioGroup = findViewById(R.id.autoPowerCubeLocationRadioGroup);
-        int checkedPowerCubeLocation = autoPowerCubeLocationRadioGroup.getCheckedRadioButtonId();
+        //RadioGroup autoPowerCubeLocationRadioGroup = findViewById(R.id.autoPowerCubeLocationRadioGroup);
+        //int checkedPowerCubeLocation = autoPowerCubeLocationRadioGroup.getCheckedRadioButtonId();
 
-        if(checkedPowerCube != R.id.autoPowerCubeNoAttRadioButton &&
+        /*if(checkedPowerCube != R.id.autoPowerCubeNoAttRadioButton &&
                 checkedPowerCubeLocation == -1) {
             Toast.makeText(getApplicationContext(),
                     "Please select where the power cube was (attempted to be?) placed!",Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
 
         String redSwitchPos = buttonColorDeterminator(redSwitchBottom);
         String scalePos = buttonColorDeterminator(scaleBottom);
         String blueSwitchPos = buttonColorDeterminator(blueSwitchBottom);
 
         String autoBaseline = baselineInfo(checkedBaseline);
-        String autoPowerCube = powerCubeInfo(checkedPowerCube);
-        String autoPowerCubeLocation = powerCubeLocation(checkedPowerCubeLocation);
+        //String autoPowerCube = powerCubeInfo(checkedPowerCube);
+        //String autoPowerCubeLocation = powerCubeLocation(checkedPowerCubeLocation);
 
-        String autoCubesSwitch ="0";
+        //String autoCubesSwitch ="0";
         String autoCubesSwitchFail = "0";
-        String autoCubesScale = "0";
+        //String autoCubesScale = "0";
         String autoCubesScaleFail = "0";
 
-        if (autoPowerCubeLocation.equals("Switch") && autoPowerCube.equals("Success")) {
+        /*if (autoPowerCubeLocation.equals("Switch") && autoPowerCube.equals("Success")) {
             autoCubesSwitch = "1";
         } else if (autoPowerCubeLocation.equals("Switch") && autoPowerCube.equals("Failure")) {
             autoCubesSwitchFail = "1";
-        }
+        }*/
 
-        if (autoPowerCubeLocation.equals("Scale") && autoPowerCube.equals("Success")) {
+        /*if (autoPowerCubeLocation.equals("Scale") && autoPowerCube.equals("Success")) {
             autoCubesScale= "1";
         } else if (autoPowerCubeLocation.equals("Scale") && autoPowerCube.equals("Failure")) {
             autoCubesScaleFail = "1";
-        }
+        }*/
+
+        ElegantNumberButton autoSwitchCounter = findViewById(R.id.autoSwitchCounter);
+        ElegantNumberButton autoScaleCounter = findViewById(R.id.autoScaleCounter);
 
         editor.putString("redSwitchPos", redSwitchPos);
         editor.putString("scalePos", scalePos);
@@ -155,14 +158,10 @@ public class ScoutMatch2 extends AppCompatActivity{
 
         editor.putString("autoBaseline", autoBaseline);
 
-        editor.putString("autoCubesSwitch", autoCubesSwitch);
+        editor.putString("autoCubesSwitch", autoSwitchCounter.getNumber());
         editor.putString("autoCubesSwitchFail", autoCubesSwitchFail);
-        editor.putString("autoCubesScale", autoCubesScale);
+        editor.putString("autoCubesScale", autoScaleCounter.getNumber());
         editor.putString("autoCubesScaleFail", autoCubesScaleFail);
-
-        /*editor.putString("autoBaseline",autoBaseline);
-        editor.putString("autoPowerCube", autoPowerCube);
-        editor.putString("autoPowerCubeLocation", autoPowerCubeLocation);*/
 
         editor.commit();
 

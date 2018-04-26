@@ -77,73 +77,53 @@
         android:text="Place Powercube"
         android:textSize="20sp"/>
 
-    <RadioGroup
-        android:id="@+id/autoPowerCubeRadioGroup"
+    <TextView
+        android:id="@+id/autoSwitchHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="30dp"
-        android:layout_below="@id/autoPowerCubeHeader"
+        android:layout_below="@+id/autoPowerCubeHeader"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
+        android:text="Switch Placements"
+        android:textSize="14sp"/>
 
-        <RadioButton
-            android:id="@+id/autoPowerCubeSuccessRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="Success"/>
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/autoSwitchCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_below="@+id/autoSwitchHeader"
+        android:layout_marginEnd="11dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
 
-        <RadioButton
-            android:id="@+id/autoPowerCubeNoAttRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="No Attempt"/>
-
-        <RadioButton
-            android:id="@+id/autoPowerCubeFailedRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="Failed Attempt"/>
-    </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/autoPowerCubeLocationRadioGroup"
+    <TextView
+        android:id="@+id/autoScaleHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="30dp"
-        android:layout_below="@id/autoPowerCubeRadioGroup"
+        android:layout_below="@+id/autoSwitchCounter"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
+        android:text="Switch Placements"
+        android:textSize="14sp"/>
 
-        <RadioButton
-            android:id="@+id/autoPowerCubeScaleRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="Scale"/>
-
-        <RadioButton
-            android:id="@+id/autoPowerCubeSwitchRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="Switch"/>
-
-    </RadioGroup>
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/autoScaleCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_below="@+id/autoScaleHeader"
+        android:layout_marginEnd="11dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
 
     <TextView
         android:id="@+id/redSwitchHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_below="@+id/autoPowerCubeLocationRadioGroup"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/autoScaleCounter"
         android:layout_toStartOf="@+id/autoPowerCubeHeader"
         android:text="Red Switch"
-        android:textSize="20sp"/>
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/scaleHeader"
@@ -153,17 +133,16 @@
         android:layout_alignBottom="@+id/redSwitchHeader"
         android:layout_centerHorizontal="true"
         android:text="Scale"
-        android:textSize="20sp"/>
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/blueSwitchHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/scaleHeader"
-        android:layout_alignBottom="@+id/scaleHeader"
-        android:layout_toEndOf="@+id/autoPowerCubeLocationRadioGroup"
+        android:layout_alignEnd="@+id/autoBaselineRadioGroup"
+        android:layout_alignTop="@+id/redSwitchHeader"
         android:text="Blue Switch"
-        android:textSize="20sp"/>
+        android:textSize="16sp"/>
 
     <Button
         android:id="@+id/buttonBlueSwitchTop"
@@ -201,7 +180,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/buttonScaleBottom"
         android:layout_alignBottom="@+id/buttonScaleBottom"
-        android:layout_alignEnd="@+id/autoPowerCubeRadioGroup"
+        android:layout_alignEnd="@+id/buttonBlueSwitchTop"
         android:background="@color/blue"
         android:onClick="colorChange"/>
 
@@ -209,8 +188,8 @@
         android:id="@+id/buttonRedSwitchTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:layout_alignStart="@+id/autoPowerCubeRadioGroup"
+        android:layout_marginTop="15dp"
+        android:layout_alignStart="@+id/redSwitchHeader"
         android:layout_below="@+id/redSwitchHeader"
         android:background="@color/red"
         android:onClick="colorChange"/>
@@ -219,7 +198,7 @@
         android:id="@+id/buttonRedSwitchBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="14dp"
         android:layout_alignStart="@+id/buttonRedSwitchTop"
         android:layout_below="@+id/buttonRedSwitchTop"
         android:background="@color/blue"
